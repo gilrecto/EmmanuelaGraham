@@ -1,0 +1,32 @@
+@import '../web/styles/global_styles.css';
+
+@import "tailwindcss" prefix(ts);
+
+@theme {
+  --font-teachers: 'Teachers', sans-serif;
+
+	--color-white: #ffffff;
+  --off-white: #F9F6EE;
+  --color-black: #000000;
+  --color-transparent: transparent;
+  --color-gray: #929292;
+  --color-gray1: #F4F3F3;
+  --color-red: #AC0601;
+
+  --text-xs: 1.1rem;
+  --text-sm: 1.3rem;
+  --text-base: 1.5rem;
+  --text-lg: 2rem;
+  --text-xl: clamp(2.5rem, 2vw, 3rem);
+  --text-2xl: clamp(3.2rem, 3vw, 5rem);
+  --text-3xl: clamp(3.5rem, 4vw, 6.5rem);
+  --text-big: clamp(6.5rem, 12vw, 16rem);
+
+	--breakpoint-sm: 576px;
+	--breakpoint-md: 768px;
+	--breakpoint-lg: 992px;
+	--breakpoint-xl: 1200px;
+	--breakpoint-2xl: 1441px;
+}
+
+@custom-variant is-active (&.is-active);
