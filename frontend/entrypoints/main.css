@@ -1,9 +1,12 @@
 @import '../web/styles/global_styles.css';
+@import '../web/styles/swiper_slider.css';
+@import '../web/styles/index_header.css';
 
 @import "tailwindcss" prefix(ts);
 
 @theme {
-  --font-teachers: 'Teachers', sans-serif;
+  --font-brittany: 'Brittany Signature', sans-serif;
+  --font-body: var(--font-body-family);
 
 	--color-white: #ffffff;
   --off-white: #F9F6EE;
@@ -20,7 +23,7 @@
   --text-xl: clamp(2.5rem, 2vw, 3rem);
   --text-2xl: clamp(3.2rem, 3vw, 5rem);
   --text-3xl: clamp(3.5rem, 4vw, 6.5rem);
-  --text-big: clamp(6.5rem, 12vw, 16rem);
+  --text-big: clamp(5.5rem, 9vw, 16rem);
 
 	--breakpoint-sm: 576px;
 	--breakpoint-md: 768px;
