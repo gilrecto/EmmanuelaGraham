@@ -25,20 +25,21 @@
   endif
 %}
 
-<div class="disclosure ts:relative">
+<div class="disclosure">
   <button
     type="button"
-    class="disclosure__button localization-form__select localization-selector link link--text caption-large"
+    class="disclosure__button localization-form__select localization-selector link link--text caption-large ts:before:shadow-none ts:after:shadow-none"
     aria-expanded="false"
     aria-controls="{{ localPosition }}-country-results"
     aria-describedby="{{ localPosition }}Label"
   >
     <span>
-      {{- localization.country.name }} |
+      {% comment %} {{- localization.country.name }} | {% endcomment %}
+      {% render 'icon_currrency', currency_iso: localization.country.currency.iso_code %}
       {{ localization.country.currency.iso_code }}
-      {{ localization.country.currency.symbol -}}
+      ({{ localization.country.currency.symbol -}})
     </span>
-    {{ 'icon-caret.svg' | inline_asset_content }}
+    {{ 'icon-triangle.svg' | inline_asset_content }}
   </button>
   <div class="disclosure__list-wrapper country-selector" hidden>
     <div class="country-filter{% unless show_country_filter %} country-filter--no-padding{% endunless %}">
@@ -96,7 +97,7 @@
           {%- for country in popular_countries -%}
             <li class="disclosure__item" tabindex="-1">
               <a
-                class="link link--text disclosure__link caption-large focus-inset"
+                class="link link--text disclosure__link caption-large focus-inset ts:items-center"
                 href="#"
                 {% if country.iso_code == localization.country.iso_code %}
                   aria-current="true"
@@ -125,7 +126,7 @@
         {%- for country in localization.available_countries -%}
           <li class="disclosure__item" tabindex="-1">
             <a
-              class="link link--text disclosure__link caption-large focus-inset"
+              class="link link--text disclosure__link caption-large focus-inset ts:items-center"
               href="#"
               {% if country.iso_code == localization.country.iso_code %}
                 aria-current="true"

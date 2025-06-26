@@ -60,7 +60,9 @@
       {{ content_for_layout }}
     </main>
 
-    {% sections 'footer-group' %}
+    <div class="footer-section-group ts:border-t ts:border-t-gray">
+      {% sections 'footer-group' %}
+    </div>
 
     <ul hidden>
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>

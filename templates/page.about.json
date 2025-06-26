@@ -1,0 +1,80 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_W4MKt7": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_gEneUh": {
+          "type": "heading",
+          "settings": {
+            "heading": "Formed by Movement. Designed with Meaning.",
+            "heading_size": "ts:!text-lg"
+          }
+        },
+        "text_A6jABR": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Emmanuela Aba Graham is a Toronto-based industrial designer who explores the intersection of identity and form through pattern-making. Drawing from her Ghanaian-Canadian heritage, Graham creates garments that challenge conventional silhouettes while honoring the complexity of feminine identity.<\/p><p>Her work is characterized by a sophisticatd tension between structure and ease. This duality stands at the core of Graham's design philosophy, offering wearers both freedom and power through carefully engineered garments.\u2028<\/p><p>Each collection presents a conceptual narrative, inviting wearers to participate in an ongoing dialogue about presentation, perception, and presence.<\/p>"
+          }
+        },
+        "image_RxVmNi": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/emmanuela_g.jpg"
+          }
+        },
+        "text_X8Lmt4": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Through her meticulous craftsmanship and cultural perspective, Graham creates clothing that serves as both statement and embrace, garments that transform not just appearance but experience. Each piece is sustainably made in Canada using locally sourced materials, reflecting her commitment to ethical production and environmental responsibility.<\/p>"
+          }
+        },
+        "heading_4DwW3J": {
+          "type": "heading",
+          "settings": {
+            "heading": "We don’t follow trends. We build anchors.",
+            "heading_size": "ts:!text-base"
+          }
+        }
+      },
+      "block_order": [
+        "heading_gEneUh",
+        "text_A6jABR",
+        "image_RxVmNi",
+        "text_X8Lmt4",
+        "heading_4DwW3J"
+      ],
+      "custom_css": [
+        ".rich-text__wrapper {width: 100%;}",
+        ".rich-text {padding-bottom: clamp(9rem, 12vw, 21.5rem);}",
+        ".rich-text__blocks {max-width: 58rem;}",
+        ".rich-text__image {margin-top: 3rem; margin-bottom: 3rem;}",
+        ".rich-text__heading:last-of-type {margin-top: 3rem;}",
+        ".rich-text__heading {color: rgba(var(--color-button));}",
+        ".rich-text__text {font-size: var(--ts-text-xs); line-height: 1.85;}",
+        "@media only screen and (min-width: 767px) {.rich-text__image {margin-bottom: 4rem;}.rich-text__heading:last-of-type {margin-top: 4rem; }}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "scheme-2",
+        "container_width": 2000,
+        "full_width": true,
+        "padding_top": 52,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_W4MKt7"
+  ]
+}

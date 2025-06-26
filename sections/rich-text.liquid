@@ -56,6 +56,38 @@
               >
                 {{ block.settings.text }}
               </div>
+            {%- when 'image' -%}
+              {%- if block.settings.image != blank -%}
+                <div class="rich-text__image{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                  {{ block.shopify_attributes }}
+                  {% if settings.animations_reveal_on_scroll %}
+                    data-cascade
+                    style="--animation-order: {{ forloop.index }};"
+                  {% endif %}
+                >
+                  {% assign image = block.settings.image %}
+                  {% assign image_class = 'motion-reduce ts:w-full ts:max-w-full ts:h-auto' %}
+                  {% assign fetch_priority = 'auto' %}
+  
+                  {% if section.index == 1 %}
+                    {% assign fetch_priority = 'high' %}
+                  {% endif %}
+  
+                  {% assign sizes = '100vw' %}
+                  {% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
+  
+                  {% if section.settings.full_width %}
+                    {% assign sizes = '(min-width: 750px) 50vw, 100vw' %}
+                    {% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
+                  {% endif %}
+  
+                  {{
+                    image
+                    | image_url: width: 3840
+                    | image_tag: height: image.height, sizes: sizes, widths: widths, fetchpriority: fetch_priority, class: image_class, alt: image.alt | default: 'Image'
+                  }}
+                </div>
+              {%- endif -%}
             {%- when 'button' -%}
               <div
                 class="rich-text__buttons{% if block.settings.button_label != blank and block.settings.button_label_2 != blank %} rich-text__buttons--multiple{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -103,7 +135,7 @@
   "tag": "section",
   "class": "section",
   "disabled_on": {
-    "groups": ["header", "footer"]
+    "groups": ["header"]
   },
   "settings": [
     {
@@ -209,28 +241,36 @@
           "type": "select",
           "id": "heading_size",
           "options": [
-            {
-              "value": "h2",
-              "label": "t:sections.all.heading_size.options__1.label"
+             {
+              "value": "ts:!text-3xl",
+              "label": "3X Large"
             },
             {
-              "value": "h1",
-              "label": "t:sections.all.heading_size.options__2.label"
+              "value": "ts:!text-2xl",
+              "label": "2X Large"
             },
             {
-              "value": "h0",
-              "label": "t:sections.all.heading_size.options__3.label"
+              "value": "ts:!text-xl",
+              "label": "Extra Large"
             },
             {
-              "value": "hxl",
-              "label": "t:sections.all.heading_size.options__4.label"
+              "value": "ts:!text-lg",
+              "label": "Large"
             },
             {
-              "value": "hxxl",
-              "label": "t:sections.all.heading_size.options__5.label"
+              "value": "ts:!text-base",
+              "label": "Medium"
+            },
+            {
+              "value": "ts:!text-sm",
+              "label": "Small"
+            },
+            {
+              "value": "ts:!text-xs",
+              "label": "Extra Small"
             }
           ],
-          "default": "h1",
+          "default": "ts:!text-lg",
           "label": "t:sections.all.heading_size.label"
         }
       ]
@@ -344,6 +384,18 @@
           "id": "button_style_secondary_2",
           "default": false,
           "label": "t:sections.rich-text.blocks.buttons.settings.button_style_secondary_2.label"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
         }
       ]
     }

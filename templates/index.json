@@ -62,40 +62,10 @@
         "top_spacing_mobile": 0,
         "bottom_spacing_mobile": 0
       }
-    },
-    "rich_text_4YrANV": {
-      "type": "rich-text",
-      "blocks": {
-        "text_gXWg6B": {
-          "type": "text",
-          "settings": {
-            "text": "<p>EMMANUELA GRAHAM<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "text_gXWg6B"
-      ],
-      "custom_css": [
-        ".rich-text__wrapper {width: 100%; padding: 0 !important;}",
-        ".rich-text__blocks {max-width: 100%;}",
-        ".rich-text__text {font-size: var(--ts-text-big); line-height: 1.2;}"
-      ],
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "container_width": 1920,
-        "full_width": true,
-        "padding_top": 4,
-        "padding_bottom": 4
-      }
     }
   },
   "order": [
     "eg_banner_4WHL6Q",
-    "eg_banner_y4c6jQ",
-    "rich_text_4YrANV"
+    "eg_banner_y4c6jQ"
   ]
 }

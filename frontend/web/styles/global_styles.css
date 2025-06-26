@@ -22,6 +22,9 @@
 button, a, .button, .btn {
 	@apply ts:transition-all ts:duration-300 ts:ease-linear;
 }
+.rte {
+	@apply ts:space-y-8;
+}
 header .header__menu-item,
 header .list-menu__item,
 header .menu-drawer__account {
@@ -45,4 +48,22 @@ header .menu-drawer__account {
 }
 .footer .footer-block__details-content .list-menu__item {
 	@apply ts:!leading-[1.25] ts:text-xs ts:uppercase ts:text-[rgba(var(--color-foreground))];
+}
+.footer .footer__content-bottom-wrapper {
+	@apply ts:[@media(width<=749px)]:flex-col-reverse ts:[@media(width<=749px)]:items-center;
+}
+.footer .localization-form {
+	@apply ts:m-0 ts:p-0;
+}
+.footer .localization-selector {
+	@apply ts:before:!shadow-none ts:after:!shadow-none ts:!m-0 ts:p-0 ts:h-auto ts:min-h-0 ts:underline;
+}
+.footer .localization-selector > span {
+	@apply ts:flex ts:items-center ts:gap-x-3 ts:text-xs;
+}
+.footer .localization-selector .icon-triangle {
+	@apply ts:w-5 ts:ml-4 ts:transition-all ts:duration-300;
+}
+.footer .localization-selector[aria-expanded="false"] .icon-triangle {
+	@apply ts:rotate-180;
 }

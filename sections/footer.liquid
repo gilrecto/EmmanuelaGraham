@@ -309,8 +309,8 @@
       {%- if section.settings.enable_country_selector -%}
         <localization-form>
           {%- form 'localization', id: 'FooterCountryForm', class: 'localization-form' -%}
-            <div>
-              <h2 class="caption-large text-body" id="FooterCountryLabel">{{ 'localization.country_label' | t }}</h2>
+            <div class="ts:flex ts:items-center ts:gap-x-4">
+              <h2 class="caption-large text-body ts:!text-xs ts:uppercase ts:font-bold" id="FooterCountryLabel">{{ 'localization.country_label' | t }}</h2>
               {%- render 'country-localization', localPosition: 'FooterCountry' -%}
             </div>
           {%- endform -%}
