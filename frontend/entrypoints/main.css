@@ -1,6 +1,7 @@
 @import '../web/styles/global_styles.css';
 @import '../web/styles/swiper_slider.css';
 @import '../web/styles/index_header.css';
+@import '../web/styles/contact_form.css';
 
 @import "tailwindcss" prefix(ts);
 

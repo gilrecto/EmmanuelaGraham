@@ -1,0 +1,44 @@
+.section .contact .field,
+.section .contact .contact__button,
+.newsletter .newsletter-form .field,
+.newsletter .newsletter-form__button {
+	--color-foreground: 217, 217, 217;
+	--color-button-text: 255, 255, 255;
+}
+.page-width--narrow {
+	@apply ts:max-w-[54.5rem];
+}
+.contact .field .field__input,
+.newsletter .newsletter-form .field .field__input {
+	@apply ts:text-sm ts:text-black ts:bg-white;
+}
+.contact .field .field__label,
+.newsletter .newsletter-form .field .field__label {
+	@apply ts:text-gray ts:text-xs;
+	top: calc(1.4rem + var(--inputs-border-width));
+}
+.contact .section .button {
+	@apply ts:uppercase ts:font-bold ts:hover:bg-transparent ts:hover:!text-black ts:hover:border-black;
+}
+
+/* newsletter styles */
+.newsletter__wrapper {
+	@apply ts:max-md:!px-8;
+}
+.newsletter .newsletter-form,
+.newsletter .newsletter__wrapper .newsletter-form__field-wrapper {
+	@apply ts:max-w-full;
+}
+.newsletter .newsletter-form .field .field__input {
+	@apply ts:text-sm ts:text-black ts:bg-white ts:border ts:border-[rgba(var(--color-foreground))] ts:m-0;
+}
+.newsletter .newsletter-form .field .field__label {
+	top: calc(1.5rem + var(--inputs-border-width));
+}
+.contact .field .field__input:focus ~ .field__label,
+.newsletter .newsletter-form .field .field__input:focus ~ .field__label {
+	top: calc(var(--inputs-border-width) + .5rem);
+}
+.newsletter .newsletter-form__button {
+	@apply ts:w-max ts:text-xs ts:font-bold ts:uppercase ts:border ts:border-[rgba(var(--color-foreground))] ts:px-9 ts:text-[rgba(var(--color-shadow))] ts:hover:bg-[rgba(var(--color-foreground))];
+}

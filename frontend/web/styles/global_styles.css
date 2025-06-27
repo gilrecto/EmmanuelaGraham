@@ -11,7 +11,7 @@
 	@apply ts:xl:py-[var(--padding-xl)] ts:lg:py-[var(--padding-lg)] ts:md:py-[var(--padding-md)] ts:py-[var(--padding-sm)] ts:px-0 ts:overflow-hidden;
 }
 .button {
-	@apply ts:text-xs ts:leading-none ts:md:min-w-[17.5rem] ts:min-w-[14rem] ts:hover:!text-[rgba(var(--color-foreground))] ts:hover:!bg-[rgba(var(--color-background))] ts:hover:after:!shadow-none;
+	@apply ts:text-xs ts:leading-none ts:md:min-w-[17.5rem] ts:min-w-[14rem] ts:hover:!text-[rgba(var(--color-foreground))] ts:hover:!bg-[rgba(var(--color-background))] ts:hover:after:!shadow-none ts:border ts:border-[rgba(var(--color-background))];
 }
 .btn-text-only {
 	@apply ts:!text-sm ts:uppercase ts:font-normal ts:inline ts:p-0 ts:bg-transparent ts:text-[rgba(var(--color-foreground))] ts:hover:font-bold ts:hover:underline ts:transition-all ts:duration-300 ts:ease-linear;
@@ -65,5 +65,11 @@ header .menu-drawer__account {
 	@apply ts:w-5 ts:ml-4 ts:transition-all ts:duration-300;
 }
 .footer .localization-selector[aria-expanded="false"] .icon-triangle {
+	@apply ts:rotate-180;
+}
+accordion-item .icon-caret {
+	@apply ts:w-5 ts:h-5 ts:transition-all ts:duration-300;
+}
+accordion-item[open] .icon-caret {
 	@apply ts:rotate-180;
 }

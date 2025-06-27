@@ -1,0 +1,70 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 52,
+        "padding_bottom": 28
+      }
+    },
+    "eg_accordion_ANwhkt": {
+      "type": "eg_accordion",
+      "blocks": {
+        "accordion_item_fVTcin": {
+          "type": "accordion_item",
+          "settings": {
+            "accordion_header": "Made to Order",
+            "accordion_content": "<p>All garments are made to order unless stated otherwise. Orders ship 2-3 weeks after purchase. Once your order has been shipped, you will receive an email update with shipping details along with the associated tracking number.<\/p>"
+          }
+        },
+        "accordion_item_XK7Nhz": {
+          "type": "accordion_item",
+          "settings": {
+            "accordion_header": "Shipping",
+            "accordion_content": "<p>Worldwide shipping available. Any customs or import duties are charged once the parcel reaches its destination country. These charges must be paid by the recipient of the parcel. Unfortunately, we have no control over these charges, and cannot tell you what the cost would be, as customs policies and import duties vary widely from country to country.\u2028<\/p><p>The customer takes full liability for all postal charges, return shipment costs, customs charges and handling fees should they refuse to accept a parcel due to import duties or taxes. We cannot undervalue orders, or mark them as a gift. We are not responsible for any delays due to customs clearance. This is applicable to all online purchases on Emmanuelagraham.com.\u2028<\/p><p>All orders ship from Toronto, Canada.<\/p>"
+          }
+        },
+        "accordion_item_AFRgm4": {
+          "type": "accordion_item",
+          "settings": {
+            "accordion_header": "Return Policy",
+            "accordion_content": "<p>All sales are final. No refunds or exchanges.<\/p>"
+          }
+        },
+        "accordion_item_Vc7YKH": {
+          "type": "accordion_item",
+          "settings": {
+            "accordion_header": "Pricing & Sales Tax",
+            "accordion_content": "<p>ALL PRICES ARE IN CANADIAN  DOLLARS. We accept Visa, Visa Debit, MasterCard, and American Express credit cards, PayPal and Apple Pay..<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_item_fVTcin",
+        "accordion_item_XK7Nhz",
+        "accordion_item_AFRgm4",
+        "accordion_item_Vc7YKH"
+      ],
+      "custom_css": [
+        ".accordion-content {color: var(--ts-color-gray);}"
+      ],
+      "name": "Accordion",
+      "settings": {
+        "color_scheme": "",
+        "toggle_first_item": true,
+        "allow_multiple_open": true,
+        "show_caret": false,
+        "container_width": 82,
+        "full_width": false,
+        "pad_desk": 100,
+        "pad_lap": 80,
+        "pad_tab": 60,
+        "pad_mob": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "eg_accordion_ANwhkt"
+  ]
+}

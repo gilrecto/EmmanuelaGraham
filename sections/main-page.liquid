@@ -1,6 +1,9 @@
 {{ 'section-main-page.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
+  #shopify-section-{{ section.id }} {
+		--text-align: {{ section.settings.text_alignment }};
+	}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
@@ -14,13 +17,16 @@
   }
 {%- endstyle -%}
 
-<div class="page-width page-width--narrow section-{{ section.id }}-padding">
-  <h1 class="main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+<div class="page-width page-width--narrow section-{{ section.id }}-padding text-align">
+  <h1 class="main-page-title page-title {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %} ts:!mb-0">
     {{ page.title | escape }}
   </h1>
-  <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-    {{ page.content }}
-  </div>
+
+  {%- if page.content != blank -%}
+    <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      {{ page.content }}
+    </div>
+  {%- endif -%}
 </div>
 
 {% schema %}
@@ -32,6 +38,48 @@
     {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "ts:!text-3xl",
+          "label": "3X Large"
+        },
+        {
+          "value": "ts:!text-2xl",
+          "label": "2X Large"
+        },
+        {
+          "value": "ts:!text-xl",
+          "label": "Extra Large"
+        },
+        {
+          "value": "ts:!text-lg",
+          "label": "Large"
+        },
+        {
+          "value": "ts:!text-base",
+          "label": "Medium"
+        },
+        {
+          "value": "ts:!text-sm",
+          "label": "Small"
+        },
+        {
+          "value": "ts:!text-xs",
+          "label": "Extra Small"
+        }
+      ],
+      "default": "ts:!text-lg",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "text_alignment",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "default": "center"
     },
     {
       "type": "range",

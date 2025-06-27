@@ -1,0 +1,183 @@
+{%- assign setting = section.settings -%}
+{%- style -%}
+	#shopify-section-{{ section.id }} {
+		--padding-xl: {{ setting.pad_desk | append: 'px' }};
+		--padding-lg: {{ setting.pad_lap | append: 'px' }};
+		--padding-md: {{ setting.pad_tab | append: 'px' }};
+		--padding-sm: {{ setting.pad_mob | append: 'px' }};
+		--page-width: {{ setting.container_width |  append: 'rem' }}
+	}
+{%- endstyle -%}
+
+{%- if section.blocks.size > 0 -%}
+	<div class="accordion color-{{ setting.color_scheme }} custom-section">
+		<div class="page-width{% if setting.full_width %} page-width-full{% endif %}">
+			<accordion-element{% if setting.toggle_first_item %} data-toggle-first{% endif %}{% if setting.allow_multiple_open %} data-allow-multiple{% endif %}>
+				{%- for block in section.blocks -%}
+					{%- assign item = block.settings -%}
+					{%- if item.accordion_header != blank and item.accordion_content != blank -%}
+						<accordion-item class="ts:block ts:transition-all ts:duration-300{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+						{% if settings.animations_reveal_on_scroll %} data-cascade style="--animation-order: {{ forloop.index  }};"{% endif %}>
+							<div class="accordion-header ts:flex ts:items-center ts:justify-between ts:font-bold ts:text-xs ts:cursor-pointer md:ts:pb-10 ts:pb-6 ts:border-b ts:border-b-[#D9D9D9] ts:select-none{%  unless forloop.first %} ts:md:pt-12 ts:pt-9{% endunless %}" slot="header">
+								<h3 class="ts:!text-sm">
+									{{ item.accordion_header | escape }}
+								</h3>
+
+								{%- if setting.show_caret -%}
+									<span class="svg-wrapper ts:!w-6 ts:!h-6 ts:transition-transform ts:duration-300 ts:ease-in-out ts:ml-10">
+										{{'icon-caret.svg' | inline_asset_content }}
+									</span>
+								{%- endif -%}
+							</div>
+							<div class="accordion-content rte ts:mt-6 ts:max-h-0 ts:overflow-hidden ts:text-xs ts:leading-[1.85]">
+								{{ item.accordion_content }}
+							</div>
+						</accordion-item>
+					{%- endif -%}
+				{%- endfor -%}
+			</accordion-element>
+		</div>
+	</div>
+{%- endif -%}
+
+{% schema %}
+	{
+		"name": "[EG] Accordion",
+		"class": "eg-accordion",
+		"tag": "section",
+		"disabled_on": {
+			"groups": ["header", "footer"]
+		},
+		"settings": [
+			{
+				"type": "color_scheme",
+				"id": "color_scheme",
+				"label": "t:sections.all.colors.label",
+				"default": "scheme-1"
+			},
+			{
+				"type": "header",
+				"content": "Accordion Settings"
+			},
+			{
+				"type": "checkbox",
+				"id": "toggle_first_item",
+				"label": "Open first item",
+				"default": false
+			},
+			{
+				"type": "checkbox",
+				"id": "allow_multiple_open",
+				"label": "Allow multiple items to be open",
+				"default": false
+			},
+			{
+				"type": "checkbox",
+				"id": "show_caret",
+				"label": "Show Icon",
+				"default": true
+			},
+			{
+				"type": "header",
+				"content": "Container Settings"
+			},
+			{
+				"type": "range",
+				"id": "container_width",
+				"label": "Container Width",
+				"min": 50,
+				"max": 150,
+				"step": 1,
+				"unit": "rem",
+				"default": 150
+			},
+			{
+				"type": "checkbox",
+				"id": "full_width",
+				"default": true,
+				"label": "t:sections.rich-text.settings.full_width.label"
+			},
+			{
+        "type": "header",
+        "content": "Section spacing",
+        "info": "Top and bottom padding"
+      },
+      {
+        "type": "range",
+        "id": "pad_desk",
+        "label": "Dektop",
+        "unit": "px",
+        "min": 10,
+        "max": 250,
+        "step": 10,
+        "default": 100,
+				"info": "Padding"
+      },
+      {
+        "type": "range",
+        "id": "pad_lap",
+        "label": "Laptop",
+        "unit": "px",
+        "min": 10,
+        "max": 250,
+        "step": 10,
+        "default": 80,
+				"info": "Padding"
+      },
+      {
+        "type": "range",
+        "id": "pad_tab",
+        "label": "Tablet",
+        "unit": "px",
+        "min": 10,
+        "max": 250,
+        "step": 10,
+        "default": 60,
+				"info": "Padding"
+      },
+      {
+        "type": "range",
+        "id": "pad_mob",
+        "label": "Mobile",
+        "unit": "px",
+        "min": 10,
+        "max": 250,
+        "step": 10,
+        "default": 40,
+				"info": "Padding"
+      }
+		],
+		"blocks": [
+			{
+				"type": "accordion_item",
+				"name": "Accordion Item",
+				"settings": [
+					{
+						"type": "inline_richtext",
+						"id": "accordion_header",
+						"label": "Heading",
+						"default": "Accordion Header"
+					},
+					{
+						"type": "richtext",
+						"id": "accordion_content",
+						"label": "Content",
+						"default": "t:settings_schema.global.settings.text_default.content"
+					}
+				]
+			}
+		],
+		"presets": [
+			{
+				"name": "Accordion",
+				"blocks": [
+					{ "type": "accordion_item" },
+					{ "type": "accordion_item" },
+					{ "type": "accordion_item" },
+					{ "type": "accordion_item" },
+					{ "type": "accordion_item" }
+				]
+			}
+		]
+	}
+{% endschema %}

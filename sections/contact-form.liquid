@@ -1,6 +1,9 @@
 {{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
+	#shopify-section-{{ section.id }} {
+		--text-align: {{ section.settings.text_alignment }};
+	}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
@@ -17,18 +20,28 @@
 <div class="color-{{ section.settings.color_scheme }} gradient">
   <div class="contact page-width page-width--narrow section-{{ section.id }}-padding">
     {%- if section.settings.heading != blank -%}
-      <h2 class="title title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-        {{ section.settings.heading }}
-      </h2>
+      <div class="title-area text-align ts:mb-9">
+        <h2 class="title title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} ts:!mb-0">
+          {{ section.settings.heading }}
+        </h2>
+
+        {%- if section.settings.description != blank -%}
+          <div class="contact__description rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} ts:mt-8">
+            {{ section.settings.description }}
+          </div>
+        {%- endif -%}
+      </div>
     {%- else -%}
       <h2 class="visually-hidden">{{ 'templates.contact.form.title' | t }}</h2>
     {%- endif -%}
+
     {%- liquid
-      assign contact_form_class = 'isolate'
+      assign contact_form_class = 'isolate ts:space-y-4'
       if settings.animations_reveal_on_scroll
-        assign contact_form_class = 'isolate scroll-trigger animate--slide-in'
+        assign contact_form_class = 'isolate scroll-trigger animate--slide-in ts:space-y-4'
       endif
     -%}
+
     {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
       {%- if form.posted_successfully? -%}
         <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
@@ -51,55 +64,55 @@
           </li>
         </ul>
       {%- endif -%}
-      <div class="contact__fields">
-        <div class="field">
-          <input
-            class="field__input"
-            autocomplete="name"
-            type="text"
-            id="ContactForm-name"
-            name="contact[{{ 'templates.contact.form.name' | t }}]"
-            value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
-            placeholder="{{ 'templates.contact.form.name' | t }}"
-          >
-          <label class="field__label" for="ContactForm-name">{{ 'templates.contact.form.name' | t }}</label>
-        </div>
-        <div class="field field--with-error">
-          <input
-            autocomplete="email"
-            type="email"
-            id="ContactForm-email"
-            class="field__input"
-            name="contact[email]"
-            spellcheck="false"
-            autocapitalize="off"
-            value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
-            aria-required="true"
-            {% if form.errors contains 'email' %}
-              aria-invalid="true"
-              aria-describedby="ContactForm-email-error"
-            {% endif %}
-            placeholder="{{ 'templates.contact.form.email' | t }}"
-          >
-          <label class="field__label" for="ContactForm-email">
-            {{- 'templates.contact.form.email' | t }}
-            <span aria-hidden="true">*</span></label
-          >
-          {%- if form.errors contains 'email' -%}
-            <small class="contact__field-error" id="ContactForm-email-error">
-              <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
-              <span class="form__message">
-                <span class="svg-wrapper">
-                  {{- 'icon-error.svg' | inline_asset_content -}}
-                </span>
-                {{- form.errors.translated_fields.email | capitalize }}
-                {{ form.errors.messages.email -}}
-              </span>
-            </small>
-          {%- endif -%}
-        </div>
-      </div>
       <div class="field">
+        <input
+          class="field__input"
+          autocomplete="name"
+          type="text"
+          id="ContactForm-name"
+          name="contact[{{ 'templates.contact.form.name' | t }}]"
+          value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+          placeholder="{{ 'templates.contact.form.name' | t }}"
+        >
+        <label class="field__label" for="ContactForm-name">
+          {{ 'templates.contact.form.name' | t }}
+        </label>
+      </div>
+      <div class="field field--with-error">
+        <input
+          autocomplete="email"
+          type="email"
+          id="ContactForm-email"
+          class="field__input"
+          name="contact[email]"
+          spellcheck="false"
+          autocapitalize="off"
+          value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+          aria-required="true"
+          {% if form.errors contains 'email' %}
+            aria-invalid="true"
+            aria-describedby="ContactForm-email-error"
+          {% endif %}
+          placeholder="{{ 'templates.contact.form.email' | t }}"
+        >
+        <label class="field__label" for="ContactForm-email">
+          {{- 'templates.contact.form.email' | t }}
+          <span aria-hidden="true">*</span></label
+        >
+        {%- if form.errors contains 'email' -%}
+          <small class="contact__field-error" id="ContactForm-email-error">
+            <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
+            <span class="form__message">
+              <span class="svg-wrapper">
+                {{- 'icon-error.svg' | inline_asset_content -}}
+              </span>
+              {{- form.errors.translated_fields.email | capitalize }}
+              {{ form.errors.messages.email -}}
+            </span>
+          </small>
+        {%- endif -%}
+      </div>
+      {% comment %} <div class="field">
         <input
           type="tel"
           id="ContactForm-phone"
@@ -111,7 +124,7 @@
           placeholder="{{ 'templates.contact.form.phone' | t }}"
         >
         <label class="field__label" for="ContactForm-phone">{{ 'templates.contact.form.phone' | t }}</label>
-      </div>
+      </div> {% endcomment %}
       <div class="field">
         <textarea
           rows="10"
@@ -127,11 +140,37 @@
         </label>
       </div>
       <div class="contact__button">
-        <button type="submit" class="button">
+        <button type="submit" class="button button--primary button--full-width">
           {{ 'templates.contact.form.send' | t }}
         </button>
       </div>
     {%- endform -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="contact__information ts:space-y-12 ts:lg:mt-24 ts:mt-16">
+        {%- for block in section.blocks -%}
+          <div class="contact__information-item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            {{ block.shopify_attributes }}
+            {% if settings.animations_reveal_on_scroll %}
+              data-cascade
+              style="--animation-order: {{ forloop.index }};"
+            {% endif %}
+          >
+            {%- if block.settings.title != blank -%}
+              <h3 class="contact__information-title inline-richtext ts:!text-sm ts:mb-6">
+                {{ block.settings.title }}
+              </h3>
+            {%- endif -%}
+            {%- if block.settings.info != blank -%}
+              <div class="contact__information-content rte ts:text-xs ts:text-gray">
+                {{ block.settings.info }}
+              </div>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
   </div>
 </div>
 
@@ -155,28 +194,47 @@
       "id": "heading_size",
       "options": [
         {
-          "value": "h2",
-          "label": "t:sections.all.heading_size.options__1.label"
+          "value": "ts:!text-3xl",
+          "label": "3X Large"
         },
         {
-          "value": "h1",
-          "label": "t:sections.all.heading_size.options__2.label"
+          "value": "ts:!text-2xl",
+          "label": "2X Large"
         },
         {
-          "value": "h0",
-          "label": "t:sections.all.heading_size.options__3.label"
+          "value": "ts:!text-xl",
+          "label": "Extra Large"
         },
         {
-          "value": "hxl",
-          "label": "t:sections.all.heading_size.options__4.label"
+          "value": "ts:!text-lg",
+          "label": "Large"
         },
         {
-          "value": "hxxl",
-          "label": "t:sections.all.heading_size.options__5.label"
+          "value": "ts:!text-base",
+          "label": "Medium"
+        },
+        {
+          "value": "ts:!text-sm",
+          "label": "Small"
+        },
+        {
+          "value": "ts:!text-xs",
+          "label": "Extra Small"
         }
       ],
-      "default": "h1",
+      "default": "ts:!text-lg",
       "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "text_alignment",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "default": "center"
     },
     {
       "type": "color_scheme",
@@ -207,6 +265,29 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "contact_information",
+      "name": "Contact Information",
+      "limit": 8,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Add contact information such as address, phone number, or email."
+        },
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "info",
+          "label": "Information"
+        }
+      ]
     }
   ],
   "presets": [

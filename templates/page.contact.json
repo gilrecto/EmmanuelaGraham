@@ -1,25 +1,88 @@
 {
   "sections": {
-    "main": {
-      "type": "main-page",
-      "settings": {
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "form": {
       "type": "contact-form",
+      "blocks": {
+        "contact_information_brJMbC": {
+          "type": "contact_information",
+          "settings": {
+            "title": "General Inquiries",
+            "info": "<p><a href=\"mailto:info@emmanuelagraham.com\" title=\"📩 info@emmanuelagraham.com\">📩 info@emmanuelagraham.com<\/a><\/p>"
+          }
+        },
+        "contact_information_PfmkhV": {
+          "type": "contact_information",
+          "settings": {
+            "title": "Stockist \/ Wholesale",
+            "info": "<p><a href=\"mailto:partnerships@emmanuelagraham.com\" title=\"📩 partnerships@emmanuelagraham.com\">📩 partnerships@emmanuelagraham.com<\/a><\/p>"
+          }
+        },
+        "contact_information_XJbXaD": {
+          "type": "contact_information",
+          "settings": {
+            "title": "Press \/ Media",
+            "info": "<p><a href=\"mailto:media@emmanuelagraham.com\" title=\"📩 media@emmanuelagraham.com\">📩 media@emmanuelagraham.com<\/a><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "contact_information_brJMbC",
+        "contact_information_PfmkhV",
+        "contact_information_XJbXaD"
+      ],
+      "custom_css": [
+        ".title-area,.contact__information-content a:not(:hover) {color: var(--ts-color-gray);}"
+      ],
       "settings": {
-        "heading": "",
-        "heading_size": "h1",
+        "heading": "Let’s Connect.",
+        "heading_size": "ts:!text-lg",
+        "description": "<p>For press, collaborations, or customer care, please reach out below.<br\/>We respond within 1–2 business days.<\/p>",
+        "text_alignment": "center",
         "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 52,
+        "padding_bottom": 80
+      }
+    },
+    "newsletter_M6EQEt": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_7EjGmy": {
+          "type": "heading",
+          "settings": {
+            "heading": "Newsletter",
+            "heading_size": "ts:!text-lg"
+          }
+        },
+        "paragraph_bY8czf": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>enter your email address below to recieve news and updates<\/p>"
+          }
+        },
+        "email_form_b9NPaB": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_7EjGmy",
+        "paragraph_bY8czf",
+        "email_form_b9NPaB"
+      ],
+      "name": "t:sections.newsletter.presets.name",
+      "settings": {
+        "color_scheme": "scheme-5",
+        "full_width": true,
+        "text_alignment": "left",
+        "container_width": 49.5,
+        "content_alignment": "ts:md:mx-auto",
+        "padding_top": 44,
+        "padding_bottom": 44
       }
     }
   },
   "order": [
-    "main",
-    "form"
+    "form",
+    "newsletter_M6EQEt"
   ]
 }
