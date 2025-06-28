@@ -1,0 +1,394 @@
+
+{% comment %}
+  AJAX blog template using Web Components with enhancements:
+  - Categories from metafield (multi-select)
+  - Year filtering
+  - Dynamic section ID
+  - Loading state
+  - Collapsible filters for mobile
+  - Live updates via Section Rendering API
+{% endcomment %}
+
+{{ 'component-article-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'blog-filter.js' | asset_url }}" defer></script>
+
+{%- assign setting = section.settings -%}
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --padding-xl: {{ setting.pad_desk | append: 'px' }};
+    --padding-lg: {{ setting.pad_lap | append: 'px' }};
+    --padding-md: {{ setting.pad_tab | append: 'px' }};
+    --padding-sm: {{ setting.pad_mob | append: 'px' }};
+    --page-width: {{ setting.container_width | append: 'px' }};
+  }
+
+  /* Mobile Filter Styling */
+  @media (max-width: 767px) {
+    #shopify-section-{{ section.id }} .mobile-filter-section summary {
+      list-style: none;
+      -webkit-appearance: none;
+      transition: all 0.3s ease;
+    }
+
+    #shopify-section-{{ section.id }} .mobile-filter-section summary::-webkit-details-marker {
+      display: none;
+    }
+
+    #shopify-section-{{ section.id }} .mobile-filter-section summary:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+      transform: translateY(-1px);
+    }
+
+    #shopify-section-{{ section.id }} .mobile-filter-section[open] summary {
+      border-radius: 24px 24px 0 0;
+      margin-bottom: 0;
+    }
+
+    #shopify-section-{{ section.id }} .mobile-filter-section[open] > div {
+      background: white;
+      border: 1px solid #e5e5e5;
+      border-top: none;
+      border-radius: 0 0 24px 24px;
+      padding: 16px;
+      margin-top: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+
+    #shopify-section-{{ section.id }} .mobile-filter-section[open] > div {
+      max-height: 500px;
+      padding: 16px;
+    }
+
+    /* Smooth dropdown animation */
+    #shopify-section-{{ section.id }} .mobile-filter-section > div {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+      padding: 0 16px;
+      margin-top: 0;
+    }
+  }
+{%- endstyle -%}
+
+{%- assign page_url = content_for_header | split:'"pageurl":"' | last | split:'"' | first | split: request.host | last | replace:'\u0026','&' | replace:'\/','/' | replace:'%20',' ' -%}
+{%- assign query_string = page_url | split:'?' | last -%}
+{%- assign query_params = query_string | split: '&' -%}
+
+{%- assign year_param = '' -%}
+{% assign category_params_raw = '' %}
+{% assign category_params_array = '' %}
+
+{% for param in query_params %}
+  {% assign pair = param | split: '=' %}
+  {% assign key = pair[0] %}
+  {% assign value = pair[1] | url_decode %}
+  {% if key == 'year' %}
+    {% assign year_param = value %}
+  {% elsif key == 'category' %}
+    {% comment %} Handle comma-separated category values from JavaScript {% endcomment %}
+    {% assign category_params_raw = value %}
+  {% endif %}
+{% endfor %}
+
+{% comment %} Split comma-separated categories and remove empty values {% endcomment %}
+{% assign category_params_array = category_params_raw | split: ',' %}
+{% assign filtered_categories = '' %}
+{% for category in category_params_array %}
+  {% assign trimmed_category = category | strip %}
+  {% if trimmed_category != blank %}
+    {% assign filtered_categories = filtered_categories | append: trimmed_category | append: ',' %}
+  {% endif %}
+{% endfor %}
+{% assign category_params_array = filtered_categories | split: ',' %}
+{% if category_params_array.size > 0 and category_params_array.last == blank %}
+  {% assign category_params_array = category_params_array | slice: 0, category_params_array.size | minus: 1 %}
+{% endif %}
+
+<div class="main journal color-{{ setting.color_scheme }} custom-section">
+  <div class="{% if setting.full_width %}page-width-full{% else %}page-width{% endif %}">
+    {% if setting.heading != blank %}
+      <div class="title-area ts:md:mb-[6.8vw] ts:mb-20{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        <h1 class="ts:!text-lg ts:mb-1">{{ setting.heading }}</h1>
+        {% if setting.text != blank %}
+          <div class="rte ts:text-xs ts:leading-[1.85] ts:text-gray">
+            {{ setting.text }}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="ts:grid ts:grid-cols-1 ts:md:grid-cols-4 ts:gap-10 ts:mb-[9.5vw]">
+
+      <!-- Sidebar Filter -->
+      <aside class="ts:space-y-8{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        <blog-filter data-url="{{ blog.url }}" data-section-id="{{ section.id }}">
+          <form class="ts:space-y-6">
+
+            <!-- Mobile Filter Buttons -->
+            <div class="ts:md:hidden ts:space-y-4 ts:mb-8">
+              {% assign categories = blog.metafields.data.categories.value %}
+              {% if categories != blank %}
+                <!-- Categories Mobile Button -->
+                <details class="mobile-filter-section">
+                  <summary class="ts:w-full ts:bg-black ts:text-white ts:py-4 ts:px-6 ts:rounded-full ts:text-center ts:text-xs ts:font-bold ts:uppercase ts:tracking-wider ts:cursor-pointer ts:select-none">
+                    Categories
+                  </summary>
+                  <div class="ts:mt-4 ts:space-y-3 ts:px-4">
+                    {% for category in categories %}
+                      {% assign category_handle = category | handleize %}
+                      {% assign is_checked = false %}{% for param in category_params_array %}{% if param == category_handle %}{% assign is_checked = true %}{% break %}{% endif %}{% endfor %}
+                      <label class="ts:flex ts:items-center ts:text-sm ts:cursor-pointer ts:text-gray-700">
+                        <input type="checkbox" name="category" value="{{ category_handle }}" class="ts:mr-3 ts:w-4 ts:h-4" {% if is_checked %}checked{% endif %}>
+                        {{ category }}
+                      </label>
+                    {% endfor %}
+                  </div>
+                </details>
+              {% endif %}
+
+              <!-- Years Mobile Button -->
+              <details class="mobile-filter-section">
+                <summary class="ts:w-full ts:bg-black ts:text-white ts:py-4 ts:px-6 ts:rounded-full ts:text-center ts:text-xs ts:font-bold ts:uppercase ts:tracking-wider ts:cursor-pointer ts:select-none">
+                  Year
+                </summary>
+                <div class="ts:mt-4 ts:space-y-3 ts:px-4">
+                  {% assign years = "" %}
+                  {% for article in blog.articles %}
+                    {% assign year = article.published_at | date: "%Y" %}
+                    {% unless years contains year %}
+                      {% assign years = years | append: year | append: "," %}
+                    {% endunless %}
+                  {% endfor %}
+                  {% assign year_list = years | split: "," | uniq | sort | reverse %}
+                  {% for year in year_list %}
+                    {% if year != "" %}
+                      <label class="ts:flex ts:items-center ts:text-sm ts:cursor-pointer ts:text-gray-700">
+                        <input type="radio" name="year" value="{{ year }}" class="ts:mr-3 ts:w-4 ts:h-4" {% if year == year_param %}checked{% endif %}>
+                        {{ year }}
+                      </label>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              </details>
+            </div>
+
+            <!-- Desktop Filter (Hidden on Mobile) -->
+            <div class="ts:hidden ts:md:block ts:space-y-6">
+              <!-- Desktop Categories -->
+              {% assign categories = blog.metafields.data.categories.value %}
+              {% if categories != blank %}
+                <details open>
+                  <summary class="ts:text-xs ts:mb-8 ts:cursor-pointer ts:uppercase">Categories</summary>
+                  {% for category in categories %}
+                    {% assign category_handle = category | handleize %}
+                    {% assign is_checked = false %}{% for param in category_params_array %}{% if param == category_handle %}{% assign is_checked = true %}{% break %}{% endif %}{% endfor %}
+                    <label class="ts:block ts:text-xs ts:leading-[1.85] ts:cursor-pointer ts:text-gray ts:has-checked:text-[rgba(var(--color-foreground))]">
+                      <input type="checkbox" name="category" value="{{ category_handle }}" class="ts:!mr-0 ts:appearance-none" {% if is_checked %}checked{% endif %}>
+                      {{- category -}}
+                    </label>
+                  {% endfor %}
+                </details>
+              {% endif %}
+
+              <!-- Desktop Years -->
+              <details class="ts:md:mt-[6.5rem]" open>
+                <summary class="ts:text-xs ts:cursor-pointer ts:mb-8 ts:uppercase">Year</summary>
+                {% assign years = "" %}
+                {% for article in blog.articles %}
+                  {% assign year = article.published_at | date: "%Y" %}
+                  {% unless years contains year %}
+                    {% assign years = years | append: year | append: "," %}
+                  {% endunless %}
+                {% endfor %}
+                {% assign year_list = years | split: "," | uniq | sort | reverse %}
+                {% for year in year_list %}
+                  {% if year != "" %}
+                    <label class="ts:block ts:text-xs ts:leading-[1.85] ts:cursor-pointer ts:text-gray ts:has-checked:text-[rgba(var(--color-foreground))]">
+                      <input type="radio" name="year" value="{{ year }}" class="ts:!mr-0 ts:appearance-none" {% if year == year_param %}checked{% endif %}>
+                      {{- year -}}
+                    </label>
+                  {% endif %}
+                {% endfor %}
+              </details>
+            </div>
+
+            <!-- Clear Filters Button - Always render, JavaScript controls visibility -->
+            <button type="reset" class="ts:mt-4 ts:text-xs ts:underline ts:text-red ts:cursor-pointer" style="display: none;">Clear filters</button>
+          </form>
+        </blog-filter>
+      </aside>
+
+      <!-- Blog Posts -->
+      <div class="ts:md:col-span-3">
+        <div id="blog-posts" class="ts:grid ts:grid-cols-1 ts:md:grid-cols-3 ts:sm:grid-cols-2 ts:lg:gap-x-16 ts:gap-x-10 ts:md:gap-y-28 ts:gap-y-12">
+          {% paginate blog.articles by 1000 %}
+            {% for article in blog.articles %}
+              {% assign article_year = article.published_at | date: "%Y" %}
+              {% assign article_tags = article.metafields.data.categories.value | join: ',' | handleize | split: ',' | uniq %}
+
+              {% if year_param != blank and article_year != year_param %}
+                {% continue %}
+              {% endif %}
+
+              {% comment %} Category filtering: Show article if it has ANY of the selected categories (OR logic) {% endcomment %}
+              {% assign show_article = false %}
+              {% if category_params_array.size == 0 %}
+                {% assign show_article = true %}
+              {% else %}
+                {% for param in category_params_array %}
+                  {% if param != blank and article_tags contains param %}
+                    {% assign show_article = true %}
+                    {% break %}
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+              {% unless show_article %}
+                {% continue %}
+              {% endunless %}
+
+              <article class="group{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} article-card-wrapper card-wrapper"
+                {% if settings.animations_reveal_on_scroll %} data-cascade style="--animation-order: {{ forloop.index }};" {% endif %}>
+                <a href="{{ article.url }}" class="ts:block">
+                  {% if article.image %}
+                    <div class="article-card__image-wrapper ts:mb-7">
+                      <div class="article-card__image media media--hover-effect ts:aspect-[3/4]">
+                        <img
+                          src="{{ article.image.src | image_url: width: 533 }}"
+                          alt="{{ article.image.src.alt | escape }}"
+                          class="motion-reduce"
+                          loading="lazy"
+                          width="{{ article.image.width }}"
+                          height="{{ article.image.height }}"
+                        >
+                      </div>
+                    </div>
+                  {% endif %}
+                  <h3 class="ts:!text-sm">{{ article.title }}</h3>
+
+                  {% capture metafields %}
+                    {% if article.metafields.data.journal_tag != blank %}{{ article.metafields.data.journal_tag }}{% endif %}
+                    {% if article.metafields.data.categories != blank %} | {{ article.metafields.data.categories }}{% endif %}
+                  {% endcapture %}
+
+                  {% if metafields != blank %}
+                    <p class="ts:text-xs ts:text-gray ts:mt-4">
+                      <span>{{ metafields }}</span>
+                    </p>
+                  {% endif %}
+                </a>
+              </article>
+            {% endfor %}
+          {% endpaginate %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+	{
+		"name": "Main Journal",
+		"class": "main-journal",
+		"tag": "section",
+		"disabled_on": {
+			"groups": ["header", "footer"]
+		},
+		"settings": [
+			{
+				"type": "color_scheme",
+				"id": "color_scheme",
+				"label": "t:sections.all.colors.label",
+				"default": "scheme-1"
+			},
+			{
+				"type": "header",
+				"content": "Content Settings"
+			},
+			{
+				"type": "inline_richtext",
+				"id": "heading",
+				"default": "Journal",
+				"label": "Heading"
+			},
+			{
+				"type": "richtext",
+				"id": "text",
+				"default": "t:settings_schema.global.settings.text_default.content",
+				"label": "Text"
+			},
+			{
+				"type": "header",
+				"content": "Container Settings"
+			},
+			{
+				"type": "range",
+				"id": "container_width",
+				"label": "Container Width",
+				"min": 800,
+				"max": 1800,
+				"step": 10,
+				"unit": "px",
+				"default": 1500
+			},
+			{
+				"type": "checkbox",
+				"id": "full_width",
+				"default": true,
+				"label": "t:sections.rich-text.settings.full_width.label"
+			},
+			{
+        "type": "header",
+        "content": "Section spacing",
+        "info": "Top and bottom padding"
+      },
+      {
+        "type": "range",
+        "id": "pad_desk",
+        "label": "Dektop",
+        "unit": "px",
+        "min": 10,
+        "max": 250,
+        "step": 10,
+        "default": 100,
+				"info": "Padding"
+      },
+      {
+        "type": "range",
+        "id": "pad_lap",
+        "label": "Laptop",
+        "unit": "px",
+        "min": 10,
+        "max": 250,
+        "step": 10,
+        "default": 80,
+				"info": "Padding"
+      },
+      {
+        "type": "range",
+        "id": "pad_tab",
+        "label": "Tablet",
+        "unit": "px",
+        "min": 10,
+        "max": 250,
+        "step": 10,
+        "default": 60,
+				"info": "Padding"
+      },
+      {
+        "type": "range",
+        "id": "pad_mob",
+        "label": "Mobile",
+        "unit": "px",
+        "min": 10,
+        "max": 250,
+        "step": 10,
+        "default": 40,
+				"info": "Padding"
+      }
+		]
+	}
+{% endschema %}
+

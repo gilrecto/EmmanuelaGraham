@@ -1,0 +1,21 @@
+{
+  "sections": {
+    "main": {
+      "type": "main_blog_journal",
+      "settings": {
+        "color_scheme": "",
+        "heading": "{{ blog.metafields.data.custom_heading.value }}",
+        "text": "{{ blog.metafields.data.description | metafield_tag }}",
+        "container_width": 1580,
+        "full_width": false,
+        "pad_desk": 60,
+        "pad_lap": 60,
+        "pad_tab": 60,
+        "pad_mob": 40
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
