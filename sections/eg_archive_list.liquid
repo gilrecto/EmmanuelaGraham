@@ -1,0 +1,179 @@
+{%- assign setting = section.settings -%}
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --padding-xl: {{ setting.pad_desk | append: 'px' }};
+    --padding-lg: {{ setting.pad_lap | append: 'px' }};
+    --padding-md: {{ setting.pad_tab | append: 'px' }};
+    --padding-sm: {{ setting.pad_mob | append: 'px' }};
+    --page-width: {{ setting.container_width | append: 'px' }};
+  }
+{%- endstyle -%}
+
+{% assign image_class = 'motion-reduce ts:w-full ts:max-w-full ts:h-auto' %}
+{% assign fetch_priority = 'auto' %}
+
+{% if section.index == 1 %}
+	{% assign fetch_priority = 'high' %}
+{% endif %}
+
+{% assign sizes = '100vw' %}
+{% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
+
+{% if section.settings.full_width %}
+	{% assign sizes = '(min-width: 750px) 50vw, 100vw' %}
+	{% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
+{% endif %}
+
+<div class="archive-list color-{{ setting.color_scheme }} custom-section">
+  <div class="{% if setting.full_width %}page-width-full{% else %}page-width{% endif %}">
+		{%- if section.blocks.size > 0 -%}
+			<div class="ts:grid ts:grid-cols-1 ts:md:gap-y-12 ts:gap-y-20">
+				{%- for block in section.blocks -%}
+					{%- assign archive = block.settings.archive -%}
+
+					{%- if archive != blank -%}
+						<div class="archive-item {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+								{{ block.shopify_attributes }}
+								{% if settings.animations_reveal_on_scroll %}
+									data-cascade
+									style="--animation-order: {{ forloop.index }};"
+								{% endif %}
+							>
+							<div class="title-area ts:mb-8 ts:xl:flex ts:xl:justify-between ts:xl:items-end ts:max-xl:space-y-6">
+								<div class="title-colmn">
+									<h2 class="archive-item--title ts:!text-base ts:mb-4">
+										{{ archive.title }}
+									</h2>
+									{%- if archive.subtext != blank -%}
+										<div class="rte ts:text-xs">
+											{{ archive.subtext | metafield_tag }}
+										</div>
+									{%- endif -%}
+								</div>
+								<div class="archive-released-txt ts:text-xs">
+									{{ archive.released | metafield_tag }}
+								</div>
+							</div>
+							{%- if archive.media != blank -%}
+								<div class="archive-images--wrapper ts:grid ts:md:grid-cols-4 ts:grid-cols-2 ts:md:gap-8 ts:gap-4">
+									{%- assign images = archive.media.value -%}
+									{%- for image in images -%}
+										<div class="archive-image--wrapper media ts:aspect-[3/4]">
+											{{
+												image
+												| image_url: width: 500
+												| image_tag: sizes: sizes, widths: widths, fetchpriority: fetch_priority, class: image_class, loading: 'lazy', width: image.width, height: image.height, alt: image.alt | default: 'Archive Image'
+											}}
+										</div>
+									{%- endfor -%}
+								</div>
+							{%- endif -%}
+						</div>
+					{%- endif -%}
+				{%- endfor -%}
+			</div>
+		{%- endif -%}
+	</div>
+</div>
+
+{% schema %}
+	{
+		"name": "Archive List",
+		"class": "eg-archive-list",
+		"tag": "section",
+		"disabled_on": {
+			"groups": ["header", "footer"]
+		},
+		"settings": [
+			{
+				"type": "color_scheme",
+				"id": "color_scheme",
+				"label": "t:sections.all.colors.label",
+				"default": "scheme-1"
+			},
+			{
+				"type": "header",
+				"content": "Container Settings"
+			},
+			{
+				"type": "range",
+				"id": "container_width",
+				"label": "Container Width",
+				"min": 800,
+				"max": 1800,
+				"step": 10,
+				"unit": "px",
+				"default": 1500
+			},
+			{
+				"type": "checkbox",
+				"id": "full_width",
+				"default": true,
+				"label": "t:sections.rich-text.settings.full_width.label"
+			},
+			{
+        "type": "header",
+        "content": "Section spacing",
+        "info": "Top and bottom padding"
+      },
+      {
+        "type": "range",
+        "id": "pad_desk",
+        "label": "Dektop",
+        "unit": "px",
+        "min": 10,
+        "max": 250,
+        "step": 10,
+        "default": 100,
+				"info": "Padding"
+      },
+      {
+        "type": "range",
+        "id": "pad_lap",
+        "label": "Laptop",
+        "unit": "px",
+        "min": 10,
+        "max": 250,
+        "step": 10,
+        "default": 80,
+				"info": "Padding"
+      },
+      {
+        "type": "range",
+        "id": "pad_tab",
+        "label": "Tablet",
+        "unit": "px",
+        "min": 10,
+        "max": 250,
+        "step": 10,
+        "default": 60,
+				"info": "Padding"
+      },
+      {
+        "type": "range",
+        "id": "pad_mob",
+        "label": "Mobile",
+        "unit": "px",
+        "min": 10,
+        "max": 250,
+        "step": 10,
+        "default": 40,
+				"info": "Padding"
+      }
+		],
+		"blocks": [
+			{
+				"type": "archive_item",
+				"name": "Archive Item",
+				"settings": [
+					{
+						"type": "metaobject",
+						"id": "archive",
+						"label": "Archive",
+						"metaobject_type": "archive"
+					}
+				]
+			}
+		]
+	}
+{% endschema %}

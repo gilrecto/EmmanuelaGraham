@@ -1,0 +1,76 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "custom_css": [
+        ".rte {color: var(--ts-color-gray);}"
+      ],
+      "settings": {
+        "heading_size": "ts:!text-lg",
+        "text_alignment": "left",
+        "container_width": 1580,
+        "full_width": true,
+        "padding_top": 52,
+        "padding_bottom": 0
+      }
+    },
+    "eg_archive_list": {
+      "type": "eg_archive_list",
+      "blocks": {
+        "archive_item_tbcyJM": {
+          "type": "archive_item",
+          "settings": {
+            "archive": "tropism-a-w-2024-collection"
+          }
+        },
+        "archive_item_r8VYWV": {
+          "type": "archive_item",
+          "settings": {
+            "archive": "patterns-of-arrival-short-film"
+          }
+        },
+        "archive_item_BphU3Q": {
+          "type": "archive_item",
+          "settings": {
+            "archive": "sculptural-activation-fold-flow"
+          }
+        },
+        "archive_item_eBXiMB": {
+          "type": "archive_item",
+          "settings": {
+            "archive": "root-release-a-w-2025-collection"
+          }
+        },
+        "archive_item_VfJCKt": {
+          "type": "archive_item",
+          "settings": {
+            "archive": "accra-toronto-conversation-series"
+          }
+        }
+      },
+      "block_order": [
+        "archive_item_tbcyJM",
+        "archive_item_r8VYWV",
+        "archive_item_BphU3Q",
+        "archive_item_eBXiMB",
+        "archive_item_VfJCKt"
+      ],
+      "custom_css": [
+        ".rte,.archive-released-txt {color: var(--ts-color-gray);}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "container_width": 1580,
+        "full_width": false,
+        "pad_desk": 60,
+        "pad_lap": 50,
+        "pad_tab": 50,
+        "pad_mob": 50
+      }
+    }
+  },
+  "order": [
+    "main",
+    "eg_archive_list"
+  ]
+}

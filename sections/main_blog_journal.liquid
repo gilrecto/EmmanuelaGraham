@@ -107,7 +107,7 @@
   {% assign category_params_array = category_params_array | slice: 0, category_params_array.size | minus: 1 %}
 {% endif %}
 
-<div class="main journal color-{{ setting.color_scheme }} custom-section">
+<div class="main-journal color-{{ setting.color_scheme }} custom-section">
   <div class="{% if setting.full_width %}page-width-full{% else %}page-width{% endif %}">
     {% if setting.heading != blank %}
       <div class="title-area ts:md:mb-[6.8vw] ts:mb-20{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
@@ -141,7 +141,7 @@
                       {% assign category_handle = category | handleize %}
                       {% assign is_checked = false %}{% for param in category_params_array %}{% if param == category_handle %}{% assign is_checked = true %}{% break %}{% endif %}{% endfor %}
                       <label class="ts:flex ts:items-center ts:text-sm ts:cursor-pointer ts:text-gray-700">
-                        <input type="checkbox" name="category" value="{{ category_handle }}" class="ts:mr-3 ts:w-4 ts:h-4" {% if is_checked %}checked{% endif %}>
+                        <input type="checkbox" name="category-mobile" value="{{ category_handle }}" class="ts:mr-3 ts:w-4 ts:h-4" data-sync-group="category" {% if is_checked %}checked{% endif %}>
                         {{ category }}
                       </label>
                     {% endfor %}
@@ -166,7 +166,7 @@
                   {% for year in year_list %}
                     {% if year != "" %}
                       <label class="ts:flex ts:items-center ts:text-sm ts:cursor-pointer ts:text-gray-700">
-                        <input type="radio" name="year" value="{{ year }}" class="ts:mr-3 ts:w-4 ts:h-4" {% if year == year_param %}checked{% endif %}>
+                        <input type="radio" name="year-mobile" value="{{ year }}" class="ts:mr-3 ts:w-4 ts:h-4" data-sync-group="year" {% if year == year_param %}checked{% endif %}>
                         {{ year }}
                       </label>
                     {% endif %}
@@ -186,7 +186,7 @@
                     {% assign category_handle = category | handleize %}
                     {% assign is_checked = false %}{% for param in category_params_array %}{% if param == category_handle %}{% assign is_checked = true %}{% break %}{% endif %}{% endfor %}
                     <label class="ts:block ts:text-xs ts:leading-[1.85] ts:cursor-pointer ts:text-gray ts:has-checked:text-[rgba(var(--color-foreground))]">
-                      <input type="checkbox" name="category" value="{{ category_handle }}" class="ts:!mr-0 ts:appearance-none" {% if is_checked %}checked{% endif %}>
+                      <input type="checkbox" name="category-desktop" value="{{ category_handle }}" class="ts:!mr-0 ts:appearance-none" data-sync-group="category" {% if is_checked %}checked{% endif %}>
                       {{- category -}}
                     </label>
                   {% endfor %}
@@ -206,8 +206,8 @@
                 {% assign year_list = years | split: "," | uniq | sort | reverse %}
                 {% for year in year_list %}
                   {% if year != "" %}
-                    <label class="ts:block ts:text-xs ts:leading-[1.85] ts:cursor-pointer ts:text-gray ts:has-checked:text-[rgba(var(--color-foreground))]">
-                      <input type="radio" name="year" value="{{ year }}" class="ts:!mr-0 ts:appearance-none" {% if year == year_param %}checked{% endif %}>
+                    <label class="ts:block ts:text-xs ts:leading-[1.85] ts:cursor-pointer ts:text-gray ts:has-[input:checked]:text-[rgba(var(--color-foreground))]">
+                      <input type="radio" name="year-desktop" value="{{ year }}" class="ts:!mr-0 ts:appearance-none" data-sync-group="year" {% if year == year_param %}checked{% endif %}>
                       {{- year -}}
                     </label>
                   {% endif %}
@@ -391,4 +391,3 @@
 		]
 	}
 {% endschema %}
-

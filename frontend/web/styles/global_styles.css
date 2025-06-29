@@ -1,9 +1,7 @@
-.page-width {
+.page-width,
+.page-width-full {
 	@apply ts:md:!px-12 ts:!px-8;
 }
-.page-width-full {
-	@apply ts:!px-0
-} 
 .text-align {
   text-align: var(--text-align);
 }

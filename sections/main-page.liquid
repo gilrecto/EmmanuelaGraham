@@ -3,6 +3,7 @@
 {%- style -%}
   #shopify-section-{{ section.id }} {
 		--text-align: {{ section.settings.text_alignment }};
+    --page-width: {{ section.settings.container_width | append: 'px' }};
 	}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -17,13 +18,13 @@
   }
 {%- endstyle -%}
 
-<div class="page-width page-width--narrow section-{{ section.id }}-padding text-align">
-  <h1 class="main-page-title page-title {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %} ts:!mb-0">
+<div class="page-width {% if section.settings.full_width %}page-width-full{% else %}page-width--narrow{% endif %} section-{{ section.id }}-padding text-align">
+  <h1 class="main-page-title page-title {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %} ts:!mb-3">
     {{ page.title | escape }}
   </h1>
 
   {%- if page.content != blank -%}
-    <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} ts:text-xs">
       {{ page.content }}
     </div>
   {%- endif -%}
@@ -80,6 +81,22 @@
       "id": "text_alignment",
       "label": "Text Alignment",
       "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "container_width",
+      "label": "Container Width",
+      "min": 1200,
+      "max": 2000,
+      "step": 10,
+      "unit": "px",
+      "default": 1920
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "default": false,
+      "label": "t:sections.rich-text.settings.full_width.label"
     },
     {
       "type": "range",
