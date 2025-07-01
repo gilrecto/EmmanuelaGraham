@@ -1,0 +1,383 @@
+{
+  "sections": {
+    "title": {
+      "type": "main-page",
+      "custom_css": [
+        ".rte {color: var(--ts-color-gray);}",
+        "@media only screen and (max-width: 767px) {.text-align {text-align: center; }}"
+      ],
+      "settings": {
+        "heading_size": "ts:!text-lg",
+        "text_alignment": "left",
+        "container_width": 1580,
+        "full_width": true,
+        "padding_top": 52,
+        "padding_bottom": 0
+      }
+    },
+    "eg_product_list_wTdUjG": {
+      "type": "eg_product_list",
+      "blocks": {
+        "product_Lid64z": {
+          "type": "product",
+          "settings": {
+            "product": "asi"
+          }
+        },
+        "product_KUU4TY": {
+          "type": "product",
+          "settings": {
+            "product": "enzo-full-length-black"
+          }
+        }
+      },
+      "block_order": [
+        "product_Lid64z",
+        "product_KUU4TY"
+      ],
+      "custom_css": [
+        ".product-item--content,.product-item--content .price {color: var(--ts-color-gray);}"
+      ],
+      "name": "Product List",
+      "settings": {
+        "color_scheme": "",
+        "show_secondary_image": true,
+        "image_height": "adapt",
+        "container_width": 1580,
+        "full_width": false,
+        "pad_desk": 80,
+        "pad_lap": 70,
+        "pad_tab": 60,
+        "pad_mob": 40
+      }
+    },
+    "image_with_text_3UBw9r": {
+      "type": "image-with-text",
+      "blocks": {
+        "text_NnwYPC": {
+          "type": "text",
+          "settings": {
+            "text": "<p>\"We delight in the beauty of the butterfly, but rarely  admit the changes it has gone through to achieve that beauty\"<\/p>",
+            "text_style": "body"
+          }
+        },
+        "heading_UrAd9Y": {
+          "type": "heading",
+          "settings": {
+            "heading": "- Maya Angelou",
+            "heading_size": "ts:!text-lg"
+          }
+        }
+      },
+      "block_order": [
+        "text_NnwYPC",
+        "heading_UrAd9Y"
+      ],
+      "custom_css": [
+        ".image-with-text__content {max-width: 540px; margin: 0 auto;}",
+        ".rte {color: var(--ts-color-gray);}",
+        "@media only screen and (max-width: 749px) {.image-with-text__content {padding: 1rem 0 0; }}"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Maya-Angelou.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "eg_product_list_gDXGGL": {
+      "type": "eg_product_list",
+      "blocks": {
+        "product_DyAqni": {
+          "type": "product",
+          "settings": {
+            "product": "mavis"
+          }
+        }
+      },
+      "block_order": [
+        "product_DyAqni"
+      ],
+      "custom_css": [
+        ".product-item--content,.product-item--content .price {color: var(--ts-color-gray);}"
+      ],
+      "name": "Product List",
+      "settings": {
+        "color_scheme": "",
+        "show_secondary_image": true,
+        "image_height": "adapt",
+        "container_width": 1580,
+        "full_width": false,
+        "pad_desk": 80,
+        "pad_lap": 70,
+        "pad_tab": 60,
+        "pad_mob": 40
+      }
+    },
+    "image_with_text_QTrbiA": {
+      "type": "image-with-text",
+      "blocks": {
+        "text_mYnpPt": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>\"We delight in the beauty of the butterfly, but rarely  admit the changes it has gone through to achieve that beauty\"<\/p>",
+            "text_style": "body"
+          }
+        },
+        "heading_ncgazh": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "- Maya Angelou",
+            "heading_size": "ts:!text-lg"
+          }
+        }
+      },
+      "block_order": [
+        "text_mYnpPt",
+        "heading_ncgazh"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/shop_all_img2.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "eg_product_list_RjnMHn": {
+      "type": "eg_product_list",
+      "blocks": {
+        "product_PRTTX4": {
+          "type": "product",
+          "settings": {
+            "product": "ura"
+          }
+        }
+      },
+      "block_order": [
+        "product_PRTTX4"
+      ],
+      "custom_css": [
+        ".product-item--content,.product-item--content .price {color: var(--ts-color-gray);}"
+      ],
+      "name": "Product List",
+      "settings": {
+        "color_scheme": "",
+        "show_secondary_image": true,
+        "image_height": "adapt",
+        "container_width": 1580,
+        "full_width": false,
+        "pad_desk": 80,
+        "pad_lap": 70,
+        "pad_tab": 60,
+        "pad_mob": 40
+      }
+    },
+    "image_with_text_p9ehFd": {
+      "type": "image-with-text",
+      "blocks": {
+        "text_UCKpbg": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>\"We delight in the beauty of the butterfly, but rarely  admit the changes it has gone through to achieve that beauty\"<\/p>",
+            "text_style": "body"
+          }
+        },
+        "heading_becTc9": {
+          "type": "heading",
+          "settings": {
+            "heading": "FIttings w\/ Precious",
+            "heading_size": "ts:!text-2xl"
+          }
+        }
+      },
+      "block_order": [
+        "text_UCKpbg",
+        "heading_becTc9"
+      ],
+      "custom_css": [
+        ".image-with-text__content {max-width: 480px; margin: 0 auto;}"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/shop_all_img3.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 52
+      }
+    },
+    "image_with_text_VpnA48": {
+      "type": "image-with-text",
+      "blocks": {
+        "text_qR6a39": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>\"We delight in the beauty of the butterfly, but rarely  admit the changes it has gone through to achieve that beauty\"<\/p>",
+            "text_style": "body"
+          }
+        },
+        "heading_76HcfX": {
+          "type": "heading",
+          "settings": {
+            "heading": "Desicions Desicions....",
+            "heading_size": "ts:!text-2xl"
+          }
+        }
+      },
+      "block_order": [
+        "text_qR6a39",
+        "heading_76HcfX"
+      ],
+      "custom_css": [
+        ".image-with-text__content {max-width: 480px; margin: 0 auto;}"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/shop_all_img4.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 48,
+        "padding_bottom": 20
+      }
+    },
+    "eg_product_list_ty3eW4": {
+      "type": "eg_product_list",
+      "blocks": {
+        "product_pPtYk4": {
+          "type": "product",
+          "settings": {
+            "product": "vela"
+          }
+        },
+        "product_Dp8ygd": {
+          "type": "product",
+          "settings": {
+            "product": "enzo-cropped-charcoal"
+          }
+        }
+      },
+      "block_order": [
+        "product_pPtYk4",
+        "product_Dp8ygd"
+      ],
+      "custom_css": [
+        ".product-item--content,.product-item--content .price {color: var(--ts-color-gray);}"
+      ],
+      "name": "Product List",
+      "settings": {
+        "color_scheme": "",
+        "show_secondary_image": true,
+        "image_height": "adapt",
+        "container_width": 1580,
+        "full_width": false,
+        "pad_desk": 80,
+        "pad_lap": 70,
+        "pad_tab": 60,
+        "pad_mob": 40
+      }
+    },
+    "multicolumn_CWcbEy": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_DbGpq3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/db39f8547fa59ad51253fa4e97cb8b22b04c3b56.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_YzpLD8": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/cb02553776edca622dbfb3fa9bf5f1a10b6a5c2c.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_DbGpq3",
+        "column_YzpLD8"
+      ],
+      "custom_css": [
+        ".multicolumn-list {justify-content: center; gap: 0.8rem; padding: 0;}",
+        ".multicolumn-list .multicolumn-card__image-wrapper {margin: 0;}",
+        "@media only screen and (min-width: 798px) {.multicolumn-list {gap: 2rem; }}"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "none",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 20,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "title",
+    "eg_product_list_wTdUjG",
+    "image_with_text_3UBw9r",
+    "eg_product_list_gDXGGL",
+    "image_with_text_QTrbiA",
+    "eg_product_list_RjnMHn",
+    "image_with_text_p9ehFd",
+    "image_with_text_VpnA48",
+    "eg_product_list_ty3eW4",
+    "multicolumn_CWcbEy"
+  ]
+}

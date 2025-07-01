@@ -1,0 +1,285 @@
+{%- assign setting = section.settings -%}
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --padding-xl: {{ setting.pad_desk | append: 'px' }};
+    --padding-lg: {{ setting.pad_lap | append: 'px' }};
+    --padding-md: {{ setting.pad_tab | append: 'px' }};
+    --padding-sm: {{ setting.pad_mob | append: 'px' }};
+    --page-width: {{ setting.container_width | append: 'px' }};
+  }
+{%- endstyle -%}
+
+{% assign image_class = 'motion-reduce ts:w-full ts:max-w-full ts:h-auto ts:group-hover:scale-105 ts:!transition-all ts:!duration-300' %}
+{% assign fetch_priority = 'auto' %}
+
+{% if section.index == 1 %}
+	{% assign fetch_priority = 'high' %}
+{% endif %}
+
+{% assign sizes = '100vw' %}
+{% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
+
+{% if section.settings.full_width %}
+	{% assign sizes = '(min-width: 750px) 50vw, 100vw' %}
+	{% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
+{% endif %}
+
+
+<div class="archive-list color-{{ setting.color_scheme }} custom-section">
+  <div class="{% if setting.full_width %}page-width-full{% else %}page-width{% endif %}">
+		{%- if section.blocks.size > 0 -%}
+			<div class="ts:grid ts:md:grid-cols-2 ts:grid-cols-1 ts:gap-8">
+				{%- for block in section.blocks -%}
+					{%- assign product = block.settings.product -%}
+
+					<div class="product-item {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+						{{ block.shopify_attributes }}
+						{% if settings.animations_reveal_on_scroll %}
+							data-cascade
+							style="--animation-order: {{ forloop.index }};"
+						{% endif %}
+					>
+						{%- if product != blank -%}
+							<a href="{{ product.url }}" class="ts:block full-unstyled-link ts:!hover:underline" aria-label="{{ product.title }}">
+								<div class="product-item--wrapper ts:space-y-8">
+									{%- if product.featured_media -%}
+										<div class="product-item--media{% if setting.show_secondary_image %} ts:grid ts:grid-cols-2 ts:md:gap-8 ts:gap-[0.8rem]{% endif %}"
+											{% if setting.image_height == 'adapt' %} style="--ratio: {{ product.featured_media.aspect_ratio }};"{% endif %}
+										>
+											<div class="media {% if setting.image_height == 'adapt' %}ts:aspect-[var(--ratio)]{% else %}{{ setting.image_height }}{% endif %} ts:group">
+												{{
+													product.featured_media
+													| image_url: width: 1024
+													| image_tag: sizes: sizes, 
+													widths: widths, 
+													fetchpriority: fetch_priority, 
+													class: image_class, 
+													loading: 'lazy', 
+													width: product.featured_media.width, 
+													height: product.featured_media.height, 
+													alt: product.featured_media.alt | default: 'Product Image'
+												}}
+											</div>
+											{%- if product.media[1] != null and setting.show_secondary_image -%}
+												<div class="media {% if setting.image_height == 'adapt' %}ts:aspect-[var(--ratio)]{% else %}{{ setting.image_height }}{% endif %} ts:group">
+													{{
+														product.media[1]
+														| image_url: width: 1024
+														| image_tag: sizes: sizes, 
+														widths: widths, 
+														fetchpriority: fetch_priority, 
+														class: image_class, 
+														loading: 'lazy', 
+														width: product.media[1].width, 
+														height: product.media[1].height, 
+														alt: product.media[1].alt | default: 'Secondary Product Image'
+													}}
+												</div>
+											{%- endif -%}
+										</div>
+									{%- endif -%}
+									<div class="product-item--content ts:*:!text-xs ts:max-md:text-center">
+										<div class="product-item--title ts:mb-[0.6rem]">
+											{{ product.title }}{% if product.metafields.custom.category != blank %} | {{ product.metafields.custom.category.value }}{% endif %}
+										</div>
+										{% render 'price', product: product, price_class: '', show_compare_at_price: true %}
+									</div>
+								</div>
+							</a>
+						{% else %}
+							{%- liquid
+								assign ridx = forloop.rindex
+								case ridx
+									when 5
+										assign ridx = 1
+									when 6
+										assign ridx = 2
+								endcase
+								
+								assign placeholder_image = 'product-apparel-' | append: ridx
+								assign placeholder = true
+							-%}
+							<a role="link" aria-disabled="true" class="ts:block full-unstyled-link ts:hover:underline" aria-label="{{ 'onboarding.product_title' | t }}">
+								<div class="product-item--wrapper ts:space-y-8">
+									<div class="product-item--media{% if setting.show_secondary_image %} ts:grid ts:grid-cols-2 ts:md:gap-8 ts:gap-[0.8rem]{% endif %}">
+										<div class="media ts:aspect-square ts:group">
+											{%- if placeholder_image -%}
+												{{ placeholder_image | placeholder_svg_tag : 'placeholder-svg ts:group-hover:scale-105 ts:transition-all ts:duration-300' }}
+											{%- else -%}
+												{{ 'product-apparel-2' | placeholder_svg_tag : 'placeholder-svg ts:group-hover:scale-105 ts:transition-all ts:duration-300' }}
+											{% endif %}
+										</div>
+										{%- if setting.show_secondary_image -%}
+											<div class="media ts:aspect-square ts:group">
+												{%- if placeholder_image -%}
+													{{ placeholder_image | placeholder_svg_tag: 'placeholder-svg ts:group-hover:scale-105 ts:transition-all ts:duration-300' }}
+												{%- else -%}
+													{{ 'product-apparel-2' | placeholder_svg_tag: 'placeholder-svg ts:group-hover:scale-105 ts:transition-all ts:duration-300' }}
+												{% endif %}
+											</div>
+										{%- endif -%}
+									</div>
+									<div class="product-item--content ts:*:!text-xs ts:*:uppercase ts:max-md:text-center">
+										<div class="product-item--title ts:mb-[0.6rem]">
+											{{ 'onboarding.product_title' | t }} | {{  'onboarding.category' | t }}
+										</div>
+										{% render 'price', placeholder: placeholder, show_compare_at_price: true %}
+									</div>
+								</div>
+							</a>
+						{%- endif -%}
+					</div>
+				{%- endfor -%}
+			</div>
+		{%- endif -%}
+	</div>
+</div>
+
+{% schema %}
+	{
+		"name": "Product List",
+		"class": "eg-product-list",
+		"tag": "section",
+		"disabled_on": {
+			"groups": ["header", "footer"]
+		},
+		"settings": [
+			{
+				"type": "color_scheme",
+				"id": "color_scheme",
+				"label": "t:sections.all.colors.label",
+				"default": "scheme-1"
+			},
+			{
+				"type": "header",
+				"content": "Product Card Settings"
+			},
+			{
+				"type": "checkbox",
+				"id": "show_secondary_image",
+				"default": true,
+				"label": "Show Secondary Image"
+			},
+			{
+				"type": "select",
+				"id": "image_height",
+				"options": [
+					{
+						"value": "adapt",
+						"label": "Adapt"
+					},
+					{
+						"value": "ts:aspect-square",
+						"label": "Square"
+					},
+					{
+						"value": "ts:aspect-[3/4]",
+						"label": "Portrait"
+					},
+					{
+						"value": "ts:aspect-video",
+						"label": "Landscape"
+					}
+				],
+				"default": "ts:aspect-square",
+				"label": "Image Orientation"
+			},
+			{
+				"type": "header",
+				"content": "Container Settings"
+			},
+			{
+				"type": "range",
+				"id": "container_width",
+				"label": "Container Width",
+				"min": 800,
+				"max": 1800,
+				"step": 10,
+				"unit": "px",
+				"default": 1500
+			},
+			{
+				"type": "checkbox",
+				"id": "full_width",
+				"default": true,
+				"label": "t:sections.rich-text.settings.full_width.label"
+			},
+			{
+        "type": "header",
+        "content": "Section spacing",
+        "info": "Top and bottom padding"
+      },
+      {
+        "type": "range",
+        "id": "pad_desk",
+        "label": "Dektop",
+        "unit": "px",
+        "min": 10,
+        "max": 250,
+        "step": 10,
+        "default": 100,
+				"info": "Padding"
+      },
+      {
+        "type": "range",
+        "id": "pad_lap",
+        "label": "Laptop",
+        "unit": "px",
+        "min": 10,
+        "max": 250,
+        "step": 10,
+        "default": 80,
+				"info": "Padding"
+      },
+      {
+        "type": "range",
+        "id": "pad_tab",
+        "label": "Tablet",
+        "unit": "px",
+        "min": 10,
+        "max": 250,
+        "step": 10,
+        "default": 60,
+				"info": "Padding"
+      },
+      {
+        "type": "range",
+        "id": "pad_mob",
+        "label": "Mobile",
+        "unit": "px",
+        "min": 10,
+        "max": 250,
+        "step": 10,
+        "default": 40,
+				"info": "Padding"
+      }
+		],
+		"blocks": [
+			{
+				"type": "product",
+				"name": "Product",
+				"limit": 6,
+				"settings": [
+					{
+						"type": "product",
+						"id": "product",
+						"label": "Product"
+					}
+				]
+			}
+		],
+		"presets": [
+			{
+				"name": "Product List",
+				"blocks": [
+					{
+						"type": "product"
+					},
+					{
+						"type": "product"
+					}
+				]
+			}
+		]
+	}
+{% endschema %}
