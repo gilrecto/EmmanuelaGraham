@@ -3,16 +3,18 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_size": "ts:!text-lg"
+          }
+        },
         "vendor": {
           "type": "text",
           "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
+            "text": "{{ product.metafields.custom.category.value }}",
+            "text_style": "subtitle"
           }
-        },
-        "title": {
-          "type": "title",
-          "settings": {}
         },
         "price": {
           "type": "price",
@@ -32,42 +34,89 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
           }
         },
         "description": {
           "type": "description",
+          "disabled": true,
           "settings": {}
         },
-        "share": {
-          "type": "share",
+        "collapsible_tab_7Wqwxn": {
+          "type": "collapsible_tab",
           "settings": {
-            "share_label": "Share"
+            "heading": "PRODUCT DESCRIPTIONS",
+            "icon": "none",
+            "content": "{{ product.description }}",
+            "page": ""
+          }
+        },
+        "collapsible_tab_R3xiTw": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Fit Details",
+            "icon": "none",
+            "content": "",
+            "page": ""
+          }
+        },
+        "collapsible_tab_Ab9Jrd": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "CARE NOTES",
+            "icon": "none",
+            "content": "",
+            "page": ""
+          }
+        },
+        "collapsible_tab_zdTN6A": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Model Reference",
+            "icon": "none",
+            "content": "",
+            "page": ""
+          }
+        },
+        "collapsible_tab_8dtUp4": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Try It In Motion",
+            "icon": "none",
+            "content": "",
+            "page": ""
           }
         }
       },
       "block_order": [
-        "vendor",
         "title",
+        "vendor",
         "price",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
         "description",
-        "share"
+        "collapsible_tab_7Wqwxn",
+        "collapsible_tab_R3xiTw",
+        "collapsible_tab_Ab9Jrd",
+        "collapsible_tab_zdTN6A",
+        "collapsible_tab_8dtUp4"
+      ],
+      "custom_css": [
+        ".rte,.price {color: var(--ts-color-gray);}"
       ],
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
         "media_size": "large",
         "constrain_to_viewport": true,
-        "media_fit": "contain",
-        "gallery_layout": "stacked",
+        "media_fit": "cover",
+        "gallery_layout": "thumbnail",
         "mobile_thumbnails": "hide",
         "media_position": "left",
-        "image_zoom": "lightbox",
-        "hide_variants": true,
+        "image_zoom": "hover",
+        "hide_variants": false,
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 12

@@ -1,0 +1,32 @@
+{
+  "sections": {
+    "main": {
+      "type": "eg_collection",
+      "custom_css": [
+        ".rte {color: var(--ts-color-gray);}"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "heading": "Collection",
+        "collection_name": "{{ collection.title }}",
+        "collection_description": "{{ collection.description }}",
+        "subtext": "{{ collection.metafields.data.year.value }}",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_details": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "container_width": 1580,
+        "full_width": false,
+        "pad_desk": 50,
+        "pad_lap": 50,
+        "pad_tab": 50,
+        "pad_mob": 40
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

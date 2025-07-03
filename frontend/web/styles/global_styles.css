@@ -71,3 +71,15 @@ accordion-item .icon-caret {
 accordion-item[open] .icon-caret {
 	@apply ts:rotate-180;
 }
+.card .card__heading {
+	@apply ts:font-body ts:text-sm;
+}
+.card .card-information > .price {
+	@apply ts:text-xs ts:text-[rgba(var(--color-foreground),0.6)];
+}
+.card__no-content .card__information {
+	@apply ts:!block;
+}
+.card__no-content .card__heading a {
+	@apply ts:absolute ts:top-0 ts:left-0 ts:w-full ts:h-full ts:text-[0rem];
+}

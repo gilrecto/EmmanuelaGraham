@@ -91,22 +91,22 @@
                 {% render block %}
               {%- when 'text' -%}
                 <p
-                  class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
+                  class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle ts:!text-xs ts:lowercase ts:!text-[rgba(var(--color-foreground),.5)]{% endif %}"
                   {{ block.shopify_attributes }}
                 >
                   {{- block.settings.text -}}
                 </p>
               {%- when 'title' -%}
-                <div class="product__title" {{ block.shopify_attributes }}>
-                  <h1>{{ product.title | escape }}</h1>
+                <div class="product__title ts:!mb-8" {{ block.shopify_attributes }}>
+                  <h1 class="{{ block.settings.heading_size }}">{{ product.title | capitalize | escape }}</h1>
                   <a href="{{ product.url }}" class="product__title">
-                    <h2 class="h1">
-                      {{ product.title | escape }}
+                    <h2 class="h1 {{ block.settings.heading_size }}">
+                      {{ product.title | capitalize | escape }}
                     </h2>
                   </a>
                 </div>
               {%- when 'price' -%}
-                <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
+                <div id="price-{{ section.id }}" class=" ts:!mt-1 ts:!mb-12 ts:*:!text-sm" role="status" {{ block.shopify_attributes }}>
                   {%- render 'price',
                     product: product,
                     use_variant: true,
@@ -215,7 +215,7 @@
                     <summary>
                       <div class="summary__title">
                         {% render 'icon-accordion', icon: block.settings.icon %}
-                        <h2 class="h4 accordion__title inline-richtext">
+                        <h2 class="h4 accordion__title inline-richtext ts:!font-body ts:!text-xs ts:uppercase">
                           {{ block.settings.heading | default: block.settings.page.title | escape }}
                         </h2>
                       </div>
@@ -768,7 +768,45 @@
     {
       "type": "title",
       "name": "t:sections.main-product.blocks.title.name",
-      "limit": 1
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "heading_size",
+          "options": [
+            {
+              "value": "ts:!text-3xl",
+              "label": "3X Large"
+            },
+            {
+              "value": "ts:!text-2xl",
+              "label": "2X Large"
+            },
+            {
+              "value": "ts:!text-xl",
+              "label": "Extra Large"
+            },
+            {
+              "value": "ts:!text-lg",
+              "label": "Large"
+            },
+            {
+              "value": "ts:!text-base",
+              "label": "Medium"
+            },
+            {
+              "value": "ts:!text-sm",
+              "label": "Small"
+            },
+            {
+              "value": "ts:!text-xs",
+              "label": "Extra Small"
+            }
+          ],
+          "default": "ts:!text-lg",
+          "label": "t:sections.all.heading_size.label"
+        }
+      ]
     },
     {
       "type": "price",
