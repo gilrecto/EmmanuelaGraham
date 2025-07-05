@@ -83,3 +83,21 @@ accordion-item[open] .icon-caret {
 .card__no-content .card__heading a {
 	@apply ts:absolute ts:top-0 ts:left-0 ts:w-full ts:h-full ts:text-[0rem];
 }
+.swiper .thumbnail[aria-current] {
+	@apply ts:shadow-none ts:border-0;
+}
+product-media-gallery .swiper-main .swiper-nav {
+	@apply ts:block ts:text-[rgba(var(--color-foreground))] ts:w-auto ts:h-auto;
+}
+product-media-gallery .swiper-main .swiper-nav:after {
+	@apply ts:text-[3.5rem];
+}
+product-media-gallery .swiper-main .swiper-pagination-bullets {
+	@apply ts:bottom-18 ts:w-full ts:flex ts:justify-center ts:gap-4 ts:px-6;
+}
+product-media-gallery .swiper-main .swiper-pagination-bullets .swiper-pagination-bullet {
+	@apply ts:flex-[1] ts:h-[0.3rem] ts:m-0 ts:rounded-none ts:bg-[rgba(var(--color-background))] ts:opacity-100;
+}
+product-media-gallery .swiper-main .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active {
+	@apply ts:bg-[rgba(var(--color-foreground),0.65)];
+}
