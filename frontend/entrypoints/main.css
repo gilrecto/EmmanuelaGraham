@@ -2,6 +2,7 @@
 @import '../web/styles/swiper_slider.css';
 @import '../web/styles/index_header.css';
 @import '../web/styles/contact_form.css';
+@import '../web/styles/product.css';
 
 @import "tailwindcss" prefix(ts);
 

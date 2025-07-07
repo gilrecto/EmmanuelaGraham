@@ -158,7 +158,7 @@
                 class="full-unstyled-link"
                 aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
               >
-                {{ card_product.title | escape }}
+                {{ card_product.title | escape }}{% if card_product.metafields.custom.category != blank %} | {{ card_product.metafields.custom.category.value }}{% endif %}
               </a>
             </h3>
             <div class="card-information">
@@ -609,7 +609,7 @@
         <div class="card__information">
           <h3 class="card__heading card__heading--placeholder{% if settings.card_style == 'standard' %} h5{% endif %}">
             <a role="link" aria-disabled="true" class="full-unstyled-link">
-              {{ 'onboarding.product_title' | t }}
+              {{ 'onboarding.product_title' | t }} | {{  'onboarding.category' | t }}
             </a>
           </h3>
           <div class="card-information">

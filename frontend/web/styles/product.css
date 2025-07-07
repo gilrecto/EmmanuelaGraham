@@ -1,0 +1,59 @@
+.swiper .thumbnail[aria-current] {
+	@apply ts:shadow-none ts:border-0;
+}
+product-media-gallery .swiper-main .swiper-nav {
+	@apply ts:block ts:text-black ts:w-auto ts:h-auto;
+}
+product-media-gallery .swiper-main .swiper-nav:after {
+	@apply ts:text-[3.5rem];
+}
+product-media-gallery .swiper-main .swiper-pagination-bullets {
+	@apply ts:bottom-18 ts:w-full ts:flex ts:justify-center ts:gap-4 ts:px-6;
+}
+product-media-gallery .swiper-main .swiper-pagination-bullets .swiper-pagination-bullet {
+	@apply ts:flex-[1] ts:h-[0.3rem] ts:m-0 ts:rounded-none ts:bg-[rgba(var(--color-background))] ts:opacity-100;
+}
+product-media-gallery .swiper-main .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active {
+	@apply ts:bg-[#555555];
+}
+.product .product-form__input .form__label {
+	@apply ts:text-xs ts:leading-none ts:!mb-[0.6rem] ts:lowercase;
+}
+.product .product-form__input--pill input[type=radio] + label {
+	@apply ts:border-[#d9d9d9];
+}
+.product .product-form__input--pill input[type=radio]:checked + label,
+.product .product-form__input--pill input[type=radio].disabled:checked + label {
+	@apply ts:bg-transparent ts:text-[rgba(var(--color-button))] ts:border-[rgba(var(--color-button))];
+}
+.product .product-form__input--pill input[type=radio].disabled + label {
+	@apply ts:border-[#d9d9d9] ts:no-underline ts:!text-[rgba(var(--color-foreground))];
+}
+.product .product-form__input--pill input[type=radio].disabled + label:after {
+	@apply ts:content-[""] ts:w-full ts:h-full ts:absolute ts:top-0 ts:left-0;
+	background: linear-gradient(to top right, transparent calc(50% - 1px), #d9d9d9, transparent calc(50% + 1px));
+}
+.product .product-form__input .quantity__input {
+	@apply ts:text-[rgba(var(--color-button))] ts:text-sm;
+}
+.product .shopify-payment-button__button {
+	@apply ts:text-xs ts:tracking-[0] ts:uppercase;
+}
+.product .product__accordion .accordion__content {
+	@apply ts:text-xs ts:leading-[1.85];
+}
+.product .product__accordion .accordion__content h1,
+.product .product__accordion .accordion__content h2,
+.product .product__accordion .accordion__content h3,
+.product .product__accordion .accordion__content h4,
+.product .product__accordion .accordion__content h5,
+.product .product__accordion .accordion__content h6 {
+	@apply ts:font-body ts:text-sm;
+}
+.product .product__accordion .accordion__content.rte ul,
+.product .product__accordion .accordion__content.rte ol {
+	@apply ts:list-inside ts:list-disc ts:pl-0;
+}
+.product .price .badge {
+	@apply ts:text-[1rem] ts:leading-none ts:absolute ts:top-0 ts:right-0 ts:uppercase ts:!mb-0 ts:py-2 ts:px-4;
+}
