@@ -7,7 +7,17 @@
 .page--index .section-header .header-wrapper .header__icon {
 	@apply ts:transition-all ts:duration-300;
 }
-.page--index .section-header:not(.scrolled-past-header) .header-wrapper {
+.page--index .section-header .header-wrapper {
+	@apply ts:bg-transparent;
+}
+.page--index .section-header .header-wrapper .header__heading-logo {
+	@apply ts:invert-100;
+}
+.page--index .section-header .header-wrapper .header__menu-item:not(.link--text),
+.page--index .section-header .header-wrapper .header__icon {
+	@apply ts:text-white;
+}
+/* .page--index .section-header:not(.scrolled-past-header) .header-wrapper {
 	@apply ts:bg-transparent;
 }
 .page--index .section-header:not(.scrolled-past-header) .header-wrapper .header__heading-logo {
@@ -16,7 +26,7 @@
 .page--index .section-header:not(.scrolled-past-header) .header-wrapper .header__menu-item:not(.link--text),
 .page--index .section-header:not(.scrolled-past-header) .header-wrapper .header__icon {
 	@apply ts:text-white;
-}
+} */
 
 @media only screen and (max-width: 989px) {
 	.page--index .section-header.menu-open .header-wrapper {
