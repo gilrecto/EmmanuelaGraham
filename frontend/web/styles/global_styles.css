@@ -32,14 +32,20 @@ header .menu-drawer__account {
 .footer__content-bottom {
 	@apply ts:!border-0;
 }
+.footer__content-top {
+	@apply ts:!pb-0
+}
 .footer .footer__blocks-wrapper .footer-block {
 	@apply ts:flex ts:2xl:gap-x-20 ts:gap-x-10;
 }
 .footer .footer-block__heading {
-	@apply ts:font-body ts:text-xs ts:font-bold ts:uppercase ts:basis-36 ts:mb-0;
+	@apply ts:text-xs ts:uppercase ts:basis-36 ts:mb-0;
 }
 .footer .footer-block__details-content li {
-	@apply ts:leading-none;
+	@apply ts:leading-none ts:relative;
+}
+.footer .footer-block__details-content>li:not(:last-child) {
+	@apply ts:mr-0;
 }
 .footer .footer-block__details-content > :first-child .list-menu__item--link {
 	@apply ts:!leading-none;
@@ -54,7 +60,7 @@ header .menu-drawer__account {
 	@apply ts:m-0 ts:p-0;
 }
 .footer .localization-selector {
-	@apply ts:before:!shadow-none ts:after:!shadow-none ts:!m-0 ts:p-0 ts:h-auto ts:min-h-0 ts:underline;
+	@apply ts:before:!shadow-none ts:after:!shadow-none ts:!m-0 ts:p-0 ts:h-auto ts:min-h-0 ts:uppercase;
 }
 .footer .localization-selector > span {
 	@apply ts:flex ts:items-center ts:gap-x-3 ts:text-xs;
@@ -62,8 +68,18 @@ header .menu-drawer__account {
 .footer .localization-selector .icon-triangle {
 	@apply ts:w-5 ts:ml-4 ts:transition-all ts:duration-300;
 }
+.footer .localization-form__select .icon-caret {
+	@apply ts:right-4;
+}
+.footer .localization-form__select .icon-caret,
+.footer summary.footer__menu-item .icon-caret {
+	top: calc(50% - .35rem)
+}
 .footer .localization-selector[aria-expanded="false"] .icon-triangle {
 	@apply ts:rotate-180;
+}
+footer .footer__submenu {
+	@apply ts:w-auto ts:min-w-auto ts:p-4 ts:flex ts:flex-col ts:gap-4 ts:my-4 ts:bottom-full ts:z-[2];
 }
 accordion-item .icon-caret {
 	@apply ts:w-5 ts:h-5 ts:transition-all ts:duration-300;

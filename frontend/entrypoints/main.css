@@ -7,7 +7,7 @@
 @import "tailwindcss" prefix(ts);
 
 @theme {
-  --font-brittany: 'Brittany Signature', sans-serif;
+  /* --font-brittany: 'Brittany Signature', sans-serif; */
   --font-body: var(--font-body-family);
 
 	--color-white: #ffffff;

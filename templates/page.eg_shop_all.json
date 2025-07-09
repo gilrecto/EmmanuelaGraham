@@ -21,7 +21,7 @@
         "product_Lid64z": {
           "type": "product",
           "settings": {
-            "product": "asi"
+            "product": "4-plats"
           }
         },
         "product_KUU4TY": {
@@ -64,8 +64,8 @@
         "heading_UrAd9Y": {
           "type": "heading",
           "settings": {
-            "heading": "- Maya Angelou",
-            "heading_size": "ts:!text-lg"
+            "heading": "<em>- Maya Angelou<\/em>",
+            "heading_size": "ts:!text-base"
           }
         }
       },
@@ -101,7 +101,7 @@
         "product_DyAqni": {
           "type": "product",
           "settings": {
-            "product": "mavis"
+            "product": "i-do-not-skirt"
           }
         }
       },
@@ -115,7 +115,7 @@
       "settings": {
         "color_scheme": "",
         "show_secondary_image": true,
-        "image_height": "adapt",
+        "image_height": "ts:aspect-[3\/4]",
         "container_width": 1580,
         "full_width": false,
         "pad_desk": 80,
@@ -171,7 +171,7 @@
         "product_PRTTX4": {
           "type": "product",
           "settings": {
-            "product": "ura"
+            "product": "grey-shorts"
           }
         }
       },
@@ -207,6 +207,7 @@
         },
         "heading_becTc9": {
           "type": "heading",
+          "disabled": true,
           "settings": {
             "heading": "FIttings w\/ Precious",
             "heading_size": "ts:!text-2xl"
@@ -250,6 +251,7 @@
         },
         "heading_76HcfX": {
           "type": "heading",
+          "disabled": true,
           "settings": {
             "heading": "Desicions Desicions....",
             "heading_size": "ts:!text-2xl"
@@ -286,7 +288,7 @@
         "product_pPtYk4": {
           "type": "product",
           "settings": {
-            "product": "vela"
+            "product": "armour-jacket"
           }
         },
         "product_Dp8ygd": {

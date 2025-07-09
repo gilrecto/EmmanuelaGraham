@@ -28,18 +28,18 @@
 <div class="disclosure">
   <button
     type="button"
-    class="disclosure__button localization-form__select localization-selector link link--text caption-large ts:before:shadow-none ts:after:shadow-none"
+    class="disclosure__button localization-form__select localization-selector list-menu__item list-menu__item--link link link--text caption-large ts:before:shadow-none ts:after:shadow-none ts:[@media(width<=989px)]:!pt-4"
     aria-expanded="false"
     aria-controls="{{ localPosition }}-country-results"
     aria-describedby="{{ localPosition }}Label"
   >
     <span>
-      {% comment %} {{- localization.country.name }} | {% endcomment %}
-      {% render 'icon_currrency', currency_iso: localization.country.currency.iso_code %}
+      {{- localization.country.name }}
+      {% comment %} {% render 'icon_currrency', currency_iso: localization.country.currency.iso_code %}
       {{ localization.country.currency.iso_code }}
-      ({{ localization.country.currency.symbol -}})
+      ({{ localization.country.currency.symbol -}}) {% endcomment %}
     </span>
-    {{ 'icon-triangle.svg' | inline_asset_content }}
+    {{ 'icon-caret.svg' | inline_asset_content }}
   </button>
   <div class="disclosure__list-wrapper country-selector" hidden>
     <div class="country-filter{% unless show_country_filter %} country-filter--no-padding{% endunless %}">

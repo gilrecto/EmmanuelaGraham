@@ -36,6 +36,7 @@
       "blocks": {
         "link_list_hQrhWC": {
           "type": "link_list",
+          "disabled": true,
           "settings": {
             "heading": "Connect",
             "menu": "footer"
@@ -43,6 +44,7 @@
         },
         "link_list_GeMryN": {
           "type": "link_list",
+          "disabled": true,
           "settings": {
             "heading": "Info",
             "menu": "footer-info"
@@ -50,6 +52,7 @@
         },
         "link_list_4T7CJH": {
           "type": "link_list",
+          "disabled": true,
           "settings": {
             "heading": "The Company",
             "menu": "footer-company"
@@ -57,9 +60,17 @@
         },
         "link_list_ejtnHx": {
           "type": "link_list",
+          "disabled": true,
           "settings": {
             "heading": "Social",
             "menu": "footer-social"
+          }
+        },
+        "inline_menu_GEtzbe": {
+          "type": "inline_menu",
+          "settings": {
+            "menu": "footer-1",
+            "enable_country_selector": true
           }
         }
       },
@@ -67,7 +78,8 @@
         "link_list_hQrhWC",
         "link_list_GeMryN",
         "link_list_4T7CJH",
-        "link_list_ejtnHx"
+        "link_list_ejtnHx",
+        "inline_menu_GEtzbe"
       ],
       "custom_css": [
         "@media screen and (min-width: 1441px) {.grid {--grid-desktop-horizontal-spacing: 8rem; }}"
@@ -78,10 +90,10 @@
         "newsletter_heading": "Subscribe to our emails",
         "enable_follow_on_shop": false,
         "show_social": false,
-        "enable_country_selector": true,
+        "enable_country_selector": false,
         "enable_language_selector": false,
         "payment_enable": false,
-        "show_policy": false,
+        "show_policy": true,
         "margin_top": 0,
         "padding_top": 64,
         "padding_bottom": 36
