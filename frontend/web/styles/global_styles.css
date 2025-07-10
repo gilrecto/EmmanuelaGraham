@@ -88,7 +88,7 @@ accordion-item[open] .icon-caret {
 	@apply ts:rotate-180;
 }
 .card .card__heading {
-	@apply ts:font-body ts:text-sm;
+	@apply ts:font-body ts:text-sm ts:uppercase;
 }
 .card .card-information > .price {
 	@apply ts:text-xs ts:text-[rgba(var(--color-foreground),0.6)];

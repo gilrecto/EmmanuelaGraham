@@ -40,6 +40,51 @@
         "bottom_spacing_mobile": 0
       }
     },
+    "eg_featured_collection_pwMnct": {
+      "type": "eg_featured_collection",
+      "name": " Featured Collection",
+      "settings": {
+        "color_scheme": "",
+        "title": "Our Collection",
+        "title_size": "ts:!text-base",
+        "collection": "shop-all",
+        "view_all": false,
+        "prodoct_limit": 15,
+        "view_link_label": "View Collection",
+        "text_alignment": "left",
+        "view_all_style": "link",
+        "container_width": 1920,
+        "full_width": false,
+        "box_color_scheme": "",
+        "bordered": false,
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "d_slides": 4.3,
+        "l_slides": 3.4,
+        "t_slides": 2.5,
+        "m_slides": 2,
+        "d_space": 20,
+        "l_space": 20,
+        "t_space": 15,
+        "m_space": 10,
+        "enable_loop": true,
+        "center_mode": false,
+        "mousewheel": false,
+        "enable_autoplay": true,
+        "autoplay_speed": 5000,
+        "enable_navigation": true,
+        "enable_pagination": false,
+        "destroy_swiper": true,
+        "pad_desk": 60,
+        "pad_lap": 60,
+        "pad_tab": 50,
+        "pad_mob": 40
+      }
+    },
     "eg_banner_y4c6jQ": {
       "type": "eg_banner",
       "name": "Banner",
@@ -66,6 +111,7 @@
   },
   "order": [
     "eg_banner_4WHL6Q",
+    "eg_featured_collection_pwMnct",
     "eg_banner_y4c6jQ"
   ]
 }
