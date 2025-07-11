@@ -9,7 +9,7 @@
   }
 {%- endstyle -%}
 
-<div class="archive-list color-{{ setting.color_scheme }} custom-section">
+<div class="collection color-{{ setting.color_scheme }} custom-section">
   <div class="{% if setting.full_width %}page-width-full{% else %}page-width{% endif %}">
 		{%- if setting.heading != blank -%}
 			<div class="title-area ts:text-center ts:md:mb-16 ts:mb-11{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
@@ -84,8 +84,8 @@
 
 {% schema %}
 	{
-		"name": "Product List",
-		"class": "eg-product-list",
+		"name": "Main Collection",
+		"class": "eg-collection",
 		"tag": "section",
 		"disabled_on": {
 			"groups": ["header", "footer"]

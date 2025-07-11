@@ -101,7 +101,7 @@
 		{%- endif -%}
 		{%- if setting.enable_pagination -%}
 			"pagination": {
-        "el": ".bullets:-{{ section.id }}",
+        "el": ".bullets-{{ section.id }}",
         "clickable": true
       },
 		{%- endif -%}
@@ -116,11 +116,11 @@
 <div class="featured-collection color-{{ setting.color_scheme }} custom-section">
 	<div class="{% if setting.full_width %}page-width-full{% else %}page-width{% endif %}">
 		{%- if setting.title != blank -%}
-			<div class="title-area ts:mb-8">
-				<h2 class="title {{ setting.title_size }} ts:!m-0 ts:!mb-2">{{ setting.title }}</h2>
+			<div class="title-area ts:mb-8 ts:flex ts:items-center ts:justify-between">
+				<h2 class="title {{ setting.title_size }} ts:!m-0">{{ setting.title }}</h2>
 				{%- if setting.view_all and setting.view_link_label != blank -%}
 					<a href="{{ setting.collection.url | default: '#' }}"
-						 class="{% if section.settings.view_all_style == 'link' %}link underlined-link btn-text-only{% elsif setting.view_all_style == 'solid' %}button{% else %}button button--secondary{% endif %} view-colection ts:text-size_sm ts:no-underline"
+						 class="{% if section.settings.view_all_style == 'link' %}link underlined-link btn-text-only{% elsif setting.view_all_style == 'solid' %}button{% else %}button button--secondary{% endif %} view-colection ts:text-xs ts:!normal-case ts:!font-normal"
 						 aria-label="{{ 'sections.featured_collection.view_all_label' | t: collection_name: setting.collection.title | escape }}">
 						{{ setting.view_link_label }}
 					</a>
@@ -172,7 +172,7 @@
 			</div>
 
 			{%- if setting.enable_pagination -%}
-				<div class="swiper-pagination bullets:-{{ section.id }} ts:!top-full ts:mt-8"></div>
+				<div class="swiper-pagination bullets-{{ section.id }} ts:!top-full ts:mt-8 ts:!block"></div>
 			{%- endif -%}
 
 			{%- if setting.enable_navigation -%}

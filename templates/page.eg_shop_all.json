@@ -1,16 +1,8 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "title": {
       "type": "main-page",
+      "disabled": true,
       "custom_css": [
         ".rte {color: var(--ts-color-gray);}",
         "@media only screen and (max-width: 767px) {.text-align {text-align: center; }}"
@@ -89,8 +81,10 @@
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
+        "media_type": "image",
         "image": "shopify:\/\/shop_images\/Maya-Angelou.jpg",
         "height": "adapt",
+        "video_aspect_ratio": "ts:aspect-video",
         "desktop_image_width": "medium",
         "layout": "text_first",
         "image_behavior": "none",
@@ -110,7 +104,7 @@
         "product_DyAqni": {
           "type": "product",
           "settings": {
-            "product": "i-do-not-skirt"
+            "product": "idk"
           }
         }
       },
@@ -159,8 +153,10 @@
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
+        "media_type": "image",
         "image": "shopify:\/\/shop_images\/shop_all_img2.jpg",
         "height": "adapt",
+        "video_aspect_ratio": "ts:aspect-video",
         "desktop_image_width": "medium",
         "layout": "image_first",
         "image_behavior": "none",
@@ -180,7 +176,7 @@
         "product_PRTTX4": {
           "type": "product",
           "settings": {
-            "product": "grey-shorts"
+            "product": "zima"
           }
         }
       },
@@ -232,8 +228,10 @@
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
+        "media_type": "image",
         "image": "shopify:\/\/shop_images\/shop_all_img3.jpg",
         "height": "adapt",
+        "video_aspect_ratio": "ts:aspect-video",
         "desktop_image_width": "medium",
         "layout": "text_first",
         "image_behavior": "none",
@@ -276,8 +274,10 @@
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
+        "media_type": "image",
         "image": "shopify:\/\/shop_images\/shop_all_img4.jpg",
         "height": "adapt",
+        "video_aspect_ratio": "ts:aspect-video",
         "desktop_image_width": "medium",
         "layout": "image_first",
         "image_behavior": "none",
@@ -297,7 +297,7 @@
         "product_pPtYk4": {
           "type": "product",
           "settings": {
-            "product": "armour-jacket"
+            "product": "mura"
           }
         },
         "product_Dp8ygd": {

@@ -1,17 +1,8 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "current": {
     "logo": "shopify:\/\/shop_images\/logo.png",
     "logo_width": 70,
-    "favicon": "shopify:\/\/shop_images\/logo.png",
+    "favicon": "shopify:\/\/shop_images\/fav.png",
     "type_header_font": "helvetica_n4",
     "use_custom_font": false,
     "custom_font_name": "Brittany Signature",
@@ -150,18 +141,18 @@
     "color_schemes": {
       "scheme-1": {
         "settings": {
-          "background": "#f9f6ee",
+          "background": "#ffffff",
           "background_gradient": "",
           "text": "#000000",
           "button": "#242833",
-          "button_label": "#f9f6ee",
+          "button_label": "#ffffff",
           "secondary_button_label": "#000000",
           "shadow": "#000000"
         }
       },
       "scheme-2": {
         "settings": {
-          "background": "#f9f6ee",
+          "background": "#ffffff",
           "background_gradient": "",
           "text": "#929292",
           "button": "#000000",
@@ -174,10 +165,10 @@
         "settings": {
           "background": "#000000",
           "background_gradient": "",
-          "text": "#f9f6ee",
-          "button": "#f9f6ee",
+          "text": "#ffffff",
+          "button": "#ffffff",
           "button_label": "#000000",
-          "secondary_button_label": "#f9f6ee",
+          "secondary_button_label": "#ffffff",
           "shadow": "#000000"
         }
       },

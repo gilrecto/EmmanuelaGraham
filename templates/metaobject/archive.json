@@ -1,0 +1,26 @@
+{
+  "sections": {
+    "main": {
+      "type": "eg_archive",
+      "custom_css": [
+        ".rte {color: var(--ts-color-gray);}"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "heading": "{{ metaobject.title.value }}",
+        "description": "{{ metaobject.subtext | metafield_tag }}",
+        "subtext": "{{ metaobject.released.value }}",
+        "media_ratio": "ts:aspect-[3\/4]",
+        "container_width": 1580,
+        "full_width": false,
+        "pad_desk": 60,
+        "pad_lap": 60,
+        "pad_tab": 60,
+        "pad_mob": 40
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

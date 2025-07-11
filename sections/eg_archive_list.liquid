@@ -32,32 +32,33 @@
 					{%- assign archive = block.settings.archive -%}
 
 					{%- if archive != blank -%}
-						<div class="archive-item {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+						<div class="archive-item {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} ts:relative"
 								{{ block.shopify_attributes }}
 								{% if settings.animations_reveal_on_scroll %}
 									data-cascade
 									style="--animation-order: {{ forloop.index }};"
 								{% endif %}
 							>
-							<div class="title-area ts:mb-8 ts:xl:flex ts:xl:justify-between ts:xl:items-end ts:max-xl:space-y-6">
+							<a href="{{ archive.system.url }}" class="ts:absolute ts:top-0 ts:left-0 ts:w-full ts:h-full ts:text-[0rem] ts:z-[1]" aria-label="{{ archive.title }}">{{ archive.title }}</a>
+							<div class="title-area ts:mb-8">
 								<div class="title-colmn">
-									<h2 class="archive-item--title ts:!text-base ts:mb-4">
+									<h2 class="archive-item--title ts:!text-base ts:mb-4 ts:hover:underline">
 										{{ archive.title }}
 									</h2>
-									{%- if archive.subtext != blank -%}
+									{% comment %} {%- if archive.subtext != blank -%}
 										<div class="rte ts:text-xs">
 											{{ archive.subtext | metafield_tag }}
 										</div>
-									{%- endif -%}
+									{%- endif -%} {% endcomment %}
 								</div>
-								<div class="archive-released-txt ts:text-xs">
+								{% comment %} <div class="archive-released-txt ts:text-xs">
 									{{ archive.released | metafield_tag }}
-								</div>
+								</div> {% endcomment %}
 							</div>
 							{%- if archive.media != blank -%}
 								<div class="archive-images--wrapper ts:grid ts:md:grid-cols-4 ts:grid-cols-2 ts:md:gap-8 ts:gap-4">
 									{%- assign images = archive.media.value -%}
-									{%- for image in images -%}
+									{%- for image in images limit: 3 -%}
 										<div class="archive-image--wrapper media ts:aspect-[3/4]">
 											{{
 												image

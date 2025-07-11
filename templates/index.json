@@ -48,9 +48,9 @@
         "title": "Our Collection",
         "title_size": "ts:!text-base",
         "collection": "shop-all",
-        "view_all": false,
-        "prodoct_limit": 15,
-        "view_link_label": "View Collection",
+        "view_all": true,
+        "prodoct_limit": 6,
+        "view_link_label": "View More",
         "text_alignment": "left",
         "view_all_style": "link",
         "container_width": 1920,
@@ -73,10 +73,10 @@
         "m_space": 10,
         "enable_loop": true,
         "center_mode": false,
-        "mousewheel": false,
+        "mousewheel": true,
         "enable_autoplay": true,
         "autoplay_speed": 5000,
-        "enable_navigation": true,
+        "enable_navigation": false,
         "enable_pagination": false,
         "destroy_swiper": true,
         "pad_desk": 60,
@@ -87,6 +87,10 @@
     },
     "eg_banner_y4c6jQ": {
       "type": "eg_banner",
+      "custom_css": [
+        ".media-banner {aspect-ratio: 0.85 !important;}",
+        "@media only screen and (min-width: 768px) {.media-banner {aspect-ratio: 2.5 !important; }}"
+      ],
       "name": "Banner",
       "settings": {
         "color_scheme": "scheme-1",

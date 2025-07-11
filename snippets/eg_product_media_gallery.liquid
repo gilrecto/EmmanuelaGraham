@@ -67,7 +67,7 @@
 		-%}
 
 			<!-- Thumbnail Swiper -->
-			<div id="GalleryThumbnails-{{ section.id }}" class="thumbnail-slider quick-add-hidden ts:lg:h-[clamp(55rem,45vw,80rem)] ts:max-lg:row-span-2 ts:max-lg:max-w-11/12 ts:mx-auto ts:w-full ts:overflow-hidden ts:[@media(width<=749px)]:!hidden">
+			<div id="GalleryThumbnails-{{ section.id }}" class="thumbnail-slider quick-add-hidden ts:lg:h-[clamp(45rem,40vw,65rem)] ts:max-lg:row-span-2 ts:max-lg:max-w-11/12 ts:mx-auto ts:w-full ts:overflow-hidden ts:[@media(width<=749px)]:!hidden">
 				<div id="Slider-Thumbnails-{{ section.id }}" class="swiper swiper-thumbs thumbnail--list ts:h-full">
 					{%- capture sizes -%}
 						(min-width: {{ settings.page_width }}px) calc(({{ settings.page_width | minus: 100 | times: media_width | round }} - 4rem) / 4),

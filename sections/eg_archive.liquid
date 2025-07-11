@@ -1,0 +1,214 @@
+{%- assign setting = section.settings -%}
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --padding-xl: {{ setting.pad_desk | append: 'px' }};
+    --padding-lg: {{ setting.pad_lap | append: 'px' }};
+    --padding-md: {{ setting.pad_tab | append: 'px' }};
+    --padding-sm: {{ setting.pad_mob | append: 'px' }};
+    --page-width: {{ setting.container_width | append: 'px' }};
+  }
+{%- endstyle -%}
+
+{%- assign archive = metaobject -%}
+{% assign image_class = 'motion-reduce ts:w-full ts:max-w-full ts:h-auto' %}
+{% assign fetch_priority = 'auto' %}
+
+{% if section.index == 1 %}
+	{% assign fetch_priority = 'high' %}
+{% endif %}
+
+{% assign sizes = '100vw' %}
+{% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
+
+{% if section.settings.full_width %}
+	{% assign sizes = '(min-width: 750px) 50vw, 100vw' %}
+	{% assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' %}
+{% endif %}
+
+<div class="main-archive color-{{ setting.color_scheme }} custom-section">
+  <div class="{% if setting.full_width %}page-width-full{% else %}page-width{% endif %}">
+		<div class="main-archive-wrapper ts:grid ts:grid-cols-1 ts:md:grid-cols-4 ts:lg:gap-30 ts:gap-20">
+			<aside class="ts:space-y-8{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+				{%- if setting.heading != blank -%}
+					<h3 class="ts:!text-lg">
+						{{ setting.heading }}
+					</h3> 
+				{%- endif -%}
+				{%- if setting.subtext != blank -%}
+					<div class="rte subtext ts:text-xs">
+						<p>{{ setting.subtext }}</p>
+					</div>
+				{%- endif -%}
+				{%- if setting.description != blank -%}
+					<div class="rte ts:text-xs">
+						{{ setting.description }}
+					</div>
+				{%- endif -%}
+			</aside>
+
+			{%- if archive.media.value != blank -%}
+				<div class="archive-medias ts:md:col-span-3 ts:grid ts:md:grid-cols-3 ts:grid-cols-2 ts:md:gap-8 ts:gap-4">
+					{%- liquid
+						assign odd = true
+						assign product_count = collection.all_products_count | modulo: 2
+
+						if product_count == 0
+							assign odd = false
+						endif
+					-%}
+
+					{%- for image in archive.media.value -%}
+						<div class="archive-image--wrapper media{% unless setting.media_ratio == 'adapt' %} {{ setting.media_ratio }}{% endunless %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}{% if forloop.first and odd %} ts:max-md:col-span-2{% endif %}"
+							{% if settings.animations_reveal_on_scroll %}
+								data-cascade
+								style="--animation-order: {{ forloop.index }};{% if setting.media_ratio == 'adapt' %}aspect-ratio: {{ image.aspect_ratio }};{% endif %}"
+							{% endif %}
+						>
+							{{
+								image
+								| image_url: width: 500
+								| image_tag: sizes: sizes, widths: widths, fetchpriority: fetch_priority, class: image_class, loading: 'lazy', width: image.width, height: image.height, alt: image.alt | default: 'Archive Image'
+							}}
+						</div>
+					{%- endfor -%}
+				</div>
+			{%- endif -%}
+		</div>
+	</div>
+</div>
+
+{% schema %}
+	{
+		"name": "Main Archive",
+		"class": "eg-archive",
+		"tag": "section",
+		"disabled_on": {
+			"groups": ["header", "footer"]
+		},
+		"settings": [
+			{
+				"type": "color_scheme",
+				"id": "color_scheme",
+				"label": "t:sections.all.colors.label",
+				"default": "scheme-1"
+			},
+			{
+				"type": "header",
+				"content": "Sidebar Content"
+			},
+			{
+				"type": "inline_richtext",
+				"id": "heading",
+				"default": "Heading",
+				"label": "Heading"
+			},
+			{
+				"type": "richtext",
+				"id": "description",
+				"label": "Description"
+			},
+			{
+				"type": "text",
+				"id": "subtext",
+				"label": "Subtext"
+			},
+			{
+				"type": "header",
+				"content": "Media Settings"
+			},
+			{
+				"type": "select",
+				"id": "media_ratio",
+				"options": [
+					{
+						"value": "adapt",
+						"label": "Adapt"
+					},
+					{
+						"value": "ts:aspect-[3/4]",
+						"label": "Portrait"
+					},
+					{
+						"value": "ts:aspect-square",
+						"label": "Square"
+					},
+					{
+						"value": "ts:aspect-video",
+						"label": "Landscape"
+					}
+				],
+				"default": "ts:aspect-[3/4]",
+				"label": "Media Orientation"
+			},
+			{
+				"type": "header",
+				"content": "Container Settings"
+			},
+			{
+				"type": "range",
+				"id": "container_width",
+				"label": "Container Width",
+				"min": 800,
+				"max": 1800,
+				"step": 10,
+				"unit": "px",
+				"default": 1500
+			},
+			{
+				"type": "checkbox",
+				"id": "full_width",
+				"default": true,
+				"label": "t:sections.rich-text.settings.full_width.label"
+			},
+			{
+        "type": "header",
+        "content": "Section spacing",
+        "info": "Top and bottom padding"
+      },
+      {
+        "type": "range",
+        "id": "pad_desk",
+        "label": "Dektop",
+        "unit": "px",
+        "min": 10,
+        "max": 250,
+        "step": 10,
+        "default": 100,
+				"info": "Padding"
+      },
+      {
+        "type": "range",
+        "id": "pad_lap",
+        "label": "Laptop",
+        "unit": "px",
+        "min": 10,
+        "max": 250,
+        "step": 10,
+        "default": 80,
+				"info": "Padding"
+      },
+      {
+        "type": "range",
+        "id": "pad_tab",
+        "label": "Tablet",
+        "unit": "px",
+        "min": 10,
+        "max": 250,
+        "step": 10,
+        "default": 60,
+				"info": "Padding"
+      },
+      {
+        "type": "range",
+        "id": "pad_mob",
+        "label": "Mobile",
+        "unit": "px",
+        "min": 10,
+        "max": 250,
+        "step": 10,
+        "default": 40,
+				"info": "Padding"
+      }
+		]
+	}
+{% endschema %}

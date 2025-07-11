@@ -29,35 +29,54 @@
     <div class="image-with-text image-with-text--{{ section.settings.content_layout }} isolate{% if settings.text_boxes_border_thickness > 0 and settings.text_boxes_border_opacity > 0 and settings.media_border_thickness > 0 and settings.media_border_opacity > 0 %} collapse-borders{% endif %}{% unless section.settings.color_scheme == section.settings.section_color_scheme and settings.media_border_thickness > 0 and settings.text_boxes_shadow_opacity == 0 and settings.text_boxes_border_thickness == 0 or settings.text_boxes_border_opacity == 0 %} collapse-corners{% endunless %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       <div class="image-with-text__grid grid grid--gapless grid--1-col grid--{% if section.settings.desktop_image_width == 'medium' %}2-col-tablet{% else %}3-col-tablet{% endif %}{% if section.settings.layout == 'text_first' %} image-with-text__grid--reverse{% endif %}">
         <div class="image-with-text__media-item image-with-text__media-item--{{ section.settings.desktop_image_width }} image-with-text__media-item--{{ section.settings.desktop_content_position }} grid__item">
-          <div
-            class="image-with-text__media image-with-text__media--{{ section.settings.height }} global-media-settings{% unless remove_color_classes %} gradient color-{{ section.settings.color_scheme }}{% else %} background-transparent{% endunless %}{% if section.settings.image != blank %} media{% else %} image-with-text__media--placeholder placeholder{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %} ts:group"
-            {% if section.settings.height == 'adapt' and section.settings.image != blank %}
-              style="padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;"
-            {% endif %}
-          >
-            {%- if section.settings.image != blank -%}
-              {%- if section.settings.image_behavior == 'ambient' or section.settings.image_behavior == 'zoom-in' -%}
-                {%- assign widths = '198, 432, 642, 900, 1284, 1800' -%}
-                {%- capture sizes -%}
-              (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 1.6667 }}px,
-              (min-width: 750px) calc((100vw - 130px) / 1.667), calc((100vw - 50px) / 1.667)
-            {%- endcapture -%}
+          {%- if section.settings.media_type == 'image' -%}
+            <div
+              class="image-with-text__media image-with-text__media--{{ section.settings.height }} global-media-settings{% unless remove_color_classes %} gradient color-{{ section.settings.color_scheme }}{% else %} background-transparent{% endunless %}{% if section.settings.image != blank %} media{% else %} image-with-text__media--placeholder placeholder{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %} ts:group"
+              {% if section.settings.height == 'adapt' and section.settings.image != blank %}
+                style="padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;"
+              {% endif %}
+            >
+              {%- if section.settings.image != blank -%}
+                {%- if section.settings.image_behavior == 'ambient' or section.settings.image_behavior == 'zoom-in' -%}
+                  {%- assign widths = '198, 432, 642, 900, 1284, 1800' -%}
+                  {%- capture sizes -%}
+                (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 1.6667 }}px,
+                (min-width: 750px) calc((100vw - 130px) / 1.667), calc((100vw - 50px) / 1.667)
+              {%- endcapture -%}
+                {%- else -%}
+                  {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+                  {%- capture sizes -%}
+                (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+                (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+              {%- endcapture -%}
+                {%- endif -%}
+                {{
+                  section.settings.image
+                  | image_url: width: 1500
+                  | image_tag: sizes: sizes, widths: widths, fetchpriority: fetch_priority, class: 'ts:group-hover:scale-105 ts:!transition-all ts:!duration-300'
+                }}
               {%- else -%}
-                {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
-                {%- capture sizes -%}
-              (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
-              (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
-            {%- endcapture -%}
+                {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg ts:group-hover:scale-105 ts:transition-all ts:!duration-300' }}
               {%- endif -%}
-              {{
-                section.settings.image
-                | image_url: width: 1500
-                | image_tag: sizes: sizes, widths: widths, fetchpriority: fetch_priority, class: 'ts:group-hover:scale-105 ts:!transition-all ts:!duration-300'
-              }}
-            {%- else -%}
-              {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg ts:group-hover:scale-105 ts:transition-all ts:!duration-300' }}
-            {%- endif -%}
-          </div>
+            </div>
+          {%- endif -%}
+          {%- if section.settings.media_type == 'video' -%}
+            <div class="image-with-text__media media-wrapper{%  unless section.settings.video_aspect_ratio == 'adapt' %} {{ section.settings.video_aspect_ratio }}{% endunless %} ts:block ts:w-full"
+              {% if section.settings.video_aspect_ratio == 'adapt' %}
+                style="aspect-ratio: {{ section.settings.video.aspect_ratio }};"
+              {% endif %}
+            >
+              {%- if section.settings.poster != blank -%}
+                {% assign poster = section.settings.poster | image_url: width: section.settings.poster.width %}
+              {%- endif -%}
+              {%- assign video_source = section.settings.video.sources[1].url -%}
+
+              <video class="lazy video-player ts:w-full ts:h-full ts:object-cover" autoplay muted loop playsinline poster="{{ poster }}">
+                <source data-src="{{ video_source }}" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          {%- endif -%}
         </div>
         <div class="image-with-text__text-item grid__item">
           <div
@@ -116,9 +135,26 @@
   },
   "settings": [
     {
+      "type": "select",
+      "id": "media_type",
+      "label": "Media Type",
+      "options": [
+        {
+          "value": "image",
+          "label": "Image"
+        },
+        {
+          "value": "video",
+          "label": "Video"
+        }
+      ],
+      "default": "image"
+    },
+    {
       "type": "image_picker",
       "id": "image",
-      "label": "t:sections.image-with-text.settings.image.label"
+      "label": "t:sections.image-with-text.settings.image.label",
+      "visible_if": "{{ section.settings.media_type == 'image'}}"
     },
     {
       "type": "select",
@@ -142,7 +178,46 @@
         }
       ],
       "default": "adapt",
-      "label": "t:sections.image-with-text.settings.height.label"
+      "label": "t:sections.image-with-text.settings.height.label",
+      "visible_if": "{{ section.settings.media_type == 'image'}}"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video",
+      "visible_if": "{{ section.settings.media_type == 'video'}}"
+    },
+    {
+      "type": "image_picker",
+      "id": "poster",
+      "label": "Poster",
+      "info": "The image that will be displayed before the video starts playing.",
+      "visible_if": "{{ section.settings.media_type == 'video'}}"
+    },
+    {
+      "type": "select",
+      "id": "video_aspect_ratio",
+      "options": [
+        {
+          "value": "ts:aspect-video",
+          "label": "Landscape"
+        },
+        {
+          "value": "ts:aspect-[3/4]",
+          "label": "Portrait"
+        },
+        {
+          "value": "ts:aspect-square",
+          "label": "Square"
+        },
+        {
+          "value": "adapt",
+          "label": "Adapt"
+        }
+      ],
+      "default": "ts:aspect-video",
+      "label": "Video Orientation",
+      "visible_if": "{{ section.settings.media_type == 'video'}}"
     },
     {
       "type": "select",
