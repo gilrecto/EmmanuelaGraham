@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "title": {
@@ -28,7 +37,7 @@
         "product_KUU4TY": {
           "type": "product",
           "settings": {
-            "product": "enzo-full-length-black"
+            "product": "mura"
           }
         }
       },
@@ -58,14 +67,14 @@
         "text_NnwYPC": {
           "type": "text",
           "settings": {
-            "text": "<p>\"We delight in the beauty of the butterfly, but rarely  admit the changes it has gone through to achieve that beauty\"<\/p>",
+            "text": "<p>Pure silk that breaths your skin.</p>",
             "text_style": "body"
           }
         },
         "heading_UrAd9Y": {
           "type": "heading",
           "settings": {
-            "heading": "<em>- Maya Angelou<\/em>",
+            "heading": "Mura",
             "heading_size": "ts:!text-base"
           }
         }
@@ -82,7 +91,7 @@
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "media_type": "image",
-        "image": "shopify:\/\/shop_images\/Maya-Angelou.jpg",
+        "image": "shopify://shop_images/EMMANUELA_GRAHAM_EDITORIAL-349.jpg",
         "height": "adapt",
         "video_aspect_ratio": "ts:aspect-video",
         "desktop_image_width": "medium",
@@ -118,7 +127,7 @@
       "settings": {
         "color_scheme": "",
         "show_secondary_image": true,
-        "image_height": "ts:aspect-[3\/4]",
+        "image_height": "ts:aspect-[3/4]",
         "container_width": 1580,
         "full_width": false,
         "pad_desk": 80,
@@ -134,7 +143,7 @@
           "type": "text",
           "disabled": true,
           "settings": {
-            "text": "<p>\"We delight in the beauty of the butterfly, but rarely  admit the changes it has gone through to achieve that beauty\"<\/p>",
+            "text": "<p>\"We delight in the beauty of the butterfly, but rarely  admit the changes it has gone through to achieve that beauty\"</p>",
             "text_style": "body"
           }
         },
@@ -154,7 +163,7 @@
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "media_type": "image",
-        "image": "shopify:\/\/shop_images\/shop_all_img2.jpg",
+        "image": "shopify://shop_images/40-EMMANUELA_GRAHAM_EDITORIAL-560.jpg",
         "height": "adapt",
         "video_aspect_ratio": "ts:aspect-video",
         "desktop_image_width": "medium",
@@ -206,7 +215,7 @@
           "type": "text",
           "disabled": true,
           "settings": {
-            "text": "<p>\"We delight in the beauty of the butterfly, but rarely  admit the changes it has gone through to achieve that beauty\"<\/p>",
+            "text": "<p>\"We delight in the beauty of the butterfly, but rarely  admit the changes it has gone through to achieve that beauty\"</p>",
             "text_style": "body"
           }
         },
@@ -214,7 +223,7 @@
           "type": "heading",
           "disabled": true,
           "settings": {
-            "heading": "FIttings w\/ Precious",
+            "heading": "FIttings w/ Precious",
             "heading_size": "ts:!text-2xl"
           }
         }
@@ -229,7 +238,7 @@
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "media_type": "image",
-        "image": "shopify:\/\/shop_images\/shop_all_img3.jpg",
+        "image": "shopify://shop_images/shop_all_img3.jpg",
         "height": "adapt",
         "video_aspect_ratio": "ts:aspect-video",
         "desktop_image_width": "medium",
@@ -252,7 +261,7 @@
           "type": "text",
           "disabled": true,
           "settings": {
-            "text": "<p>\"We delight in the beauty of the butterfly, but rarely  admit the changes it has gone through to achieve that beauty\"<\/p>",
+            "text": "<p>\"We delight in the beauty of the butterfly, but rarely  admit the changes it has gone through to achieve that beauty\"</p>",
             "text_style": "body"
           }
         },
@@ -275,7 +284,7 @@
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "media_type": "image",
-        "image": "shopify:\/\/shop_images\/shop_all_img4.jpg",
+        "image": "shopify://shop_images/EMMANUELA_GRAHAM_EDITORIAL-349.jpg",
         "height": "adapt",
         "video_aspect_ratio": "ts:aspect-video",
         "desktop_image_width": "medium",
@@ -333,7 +342,7 @@
         "column_DbGpq3": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/db39f8547fa59ad51253fa4e97cb8b22b04c3b56.png",
+            "image": "shopify://shop_images/EMMANUELA_GRAHAM_EDITORIAL-421.jpg",
             "title": "",
             "text": "",
             "link_label": "",
@@ -343,7 +352,7 @@
         "column_YzpLD8": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/cb02553776edca622dbfb3fa9bf5f1a10b6a5c2c.png",
+            "image": "shopify://shop_images/EMMANUELA_GRAHAM_EDITORIAL-406.jpg",
             "title": "",
             "text": "",
             "link_label": "",
@@ -362,8 +371,8 @@
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
-        "title": "",
-        "heading_size": "h1",
+        "title": "EDIT 02",
+        "heading_size": "h2",
         "image_width": "full",
         "image_ratio": "adapt",
         "button_label": "",
