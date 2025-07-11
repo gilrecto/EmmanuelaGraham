@@ -161,7 +161,7 @@
         "text_mYnpPt": {
           "type": "text",
           "settings": {
-            "text": "<p>Pure silk</p>",
+            "text": "<h5>Pure silk</h5>",
             "text_style": "body"
           }
         },
@@ -232,7 +232,7 @@
         "text_UCKpbg": {
           "type": "text",
           "settings": {
-            "text": "<p>Song of Songs   | Capsule '25</p>",
+            "text": "<h5>Song of Songs   | Capsule '25</h5>",
             "text_style": "body"
           }
         },
