@@ -260,19 +260,12 @@
         "product_pPtYk4": {
           "type": "product",
           "settings": {
-            "product": "mura"
-          }
-        },
-        "product_Dp8ygd": {
-          "type": "product",
-          "settings": {
             "product": "enzo-cropped-charcoal"
           }
         }
       },
       "block_order": [
-        "product_pPtYk4",
-        "product_Dp8ygd"
+        "product_pPtYk4"
       ],
       "custom_css": [
         ".product-item--content,.product-item--content .price {color: var(--ts-color-gray);}"
