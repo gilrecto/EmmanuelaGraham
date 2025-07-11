@@ -36,7 +36,7 @@
         "add_overlay": false,
         "overlay_opacity": 0.5,
         "enable_anim": false,
-        "video": "shopify://files/videos/webvid.mov",
+        "video": "shopify://files/videos/cut.mp4",
         "content_alignment_h": "ts:md:items-center",
         "content_alignment_v": "ts:md:justify-center",
         "text_alignment": "center",
