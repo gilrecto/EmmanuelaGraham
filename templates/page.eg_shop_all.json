@@ -254,52 +254,6 @@
         "padding_bottom": 52
       }
     },
-    "image_with_text_VpnA48": {
-      "type": "image-with-text",
-      "blocks": {
-        "text_qR6a39": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "<p>\"We delight in the beauty of the butterfly, but rarely  admit the changes it has gone through to achieve that beauty\"</p>",
-            "text_style": "body"
-          }
-        },
-        "heading_76HcfX": {
-          "type": "heading",
-          "disabled": true,
-          "settings": {
-            "heading": "Desicions Desicions....",
-            "heading_size": "ts:!text-2xl"
-          }
-        }
-      },
-      "block_order": [
-        "text_qR6a39",
-        "heading_76HcfX"
-      ],
-      "custom_css": [
-        ".image-with-text__content {max-width: 480px; margin: 0 auto;}"
-      ],
-      "name": "t:sections.image-with-text.presets.name",
-      "settings": {
-        "media_type": "image",
-        "image": "shopify://shop_images/EMMANUELA_GRAHAM_EDITORIAL-349.jpg",
-        "height": "adapt",
-        "video_aspect_ratio": "ts:aspect-video",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "image_behavior": "none",
-        "content_layout": "no-overlap",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "left",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "padding_top": 48,
-        "padding_bottom": 20
-      }
-    },
     "eg_product_list_ty3eW4": {
       "type": "eg_product_list",
       "blocks": {
@@ -396,7 +350,6 @@
     "image_with_text_QTrbiA",
     "eg_product_list_RjnMHn",
     "image_with_text_p9ehFd",
-    "image_with_text_VpnA48",
     "eg_product_list_ty3eW4",
     "multicolumn_CWcbEy"
   ]
