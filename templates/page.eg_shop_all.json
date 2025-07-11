@@ -155,35 +155,6 @@
         "pad_mob": 40
       }
     },
-    "eg_product_list_RjnMHn": {
-      "type": "eg_product_list",
-      "blocks": {
-        "product_PRTTX4": {
-          "type": "product",
-          "settings": {
-            "product": "mura"
-          }
-        }
-      },
-      "block_order": [
-        "product_PRTTX4"
-      ],
-      "custom_css": [
-        ".product-item--content,.product-item--content .price {color: var(--ts-color-gray);}"
-      ],
-      "name": "Product List",
-      "settings": {
-        "color_scheme": "",
-        "show_secondary_image": true,
-        "image_height": "adapt",
-        "container_width": 1580,
-        "full_width": false,
-        "pad_desk": 80,
-        "pad_lap": 70,
-        "pad_tab": 60,
-        "pad_mob": 40
-      }
-    },
     "image_with_text_QTrbiA": {
       "type": "image-with-text",
       "blocks": {
@@ -228,6 +199,35 @@
         "padding_bottom": 20
       }
     },
+    "eg_product_list_RjnMHn": {
+      "type": "eg_product_list",
+      "blocks": {
+        "product_PRTTX4": {
+          "type": "product",
+          "settings": {
+            "product": "mura"
+          }
+        }
+      },
+      "block_order": [
+        "product_PRTTX4"
+      ],
+      "custom_css": [
+        ".product-item--content,.product-item--content .price {color: var(--ts-color-gray);}"
+      ],
+      "name": "Product List",
+      "settings": {
+        "color_scheme": "",
+        "show_secondary_image": true,
+        "image_height": "adapt",
+        "container_width": 1580,
+        "full_width": false,
+        "pad_desk": 80,
+        "pad_lap": 70,
+        "pad_tab": 60,
+        "pad_mob": 40
+      }
+    },
     "image_with_text_p9ehFd": {
       "type": "image-with-text",
       "blocks": {
@@ -258,7 +258,7 @@
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "media_type": "image",
-        "image": "shopify://shop_images/shop_all_img3.jpg",
+        "image": "shopify://shop_images/3Z2A0663.jpg",
         "height": "adapt",
         "video_aspect_ratio": "ts:aspect-video",
         "desktop_image_width": "medium",
@@ -338,7 +338,7 @@
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
-        "title": "EDIT 02",
+        "title": "EDIT 02 | COMING SOON",
         "heading_size": "h2",
         "image_width": "full",
         "image_ratio": "portrait",
