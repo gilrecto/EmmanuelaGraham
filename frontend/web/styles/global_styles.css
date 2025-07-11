@@ -99,3 +99,12 @@ accordion-item[open] .icon-caret {
 .card__no-content .card__heading a {
 	@apply ts:absolute ts:top-0 ts:left-0 ts:w-full ts:h-full ts:text-[0rem];
 }
+.table-wrapper {
+	@apply ts:overflow-x-auto;
+}
+table.size-chart th, table.size-chart td {
+	@apply ts:text-xs ts:p-4 ts:w-35 ts:text-black;
+}
+table.size-chart th {
+	@apply ts:bg-gray-100;
+}

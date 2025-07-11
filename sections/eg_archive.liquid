@@ -48,16 +48,13 @@
 
 			{%- if archive.media.value != blank -%}
 				<div class="archive-medias ts:md:col-span-3 ts:grid ts:md:grid-cols-3 ts:grid-cols-2 ts:md:gap-8 ts:gap-4">
-					{%- liquid
-						assign odd = true
-						assign product_count = collection.all_products_count | modulo: 2
-
-						if product_count == 0
-							assign odd = false
-						endif
-					-%}
-
 					{%- for image in archive.media.value -%}
+						{%- assign odd = true -%}
+						{%- assign loop_length = forloop.length | modulo: 2 -%}
+						{%- if loop_length == 0  -%}
+							{%- assign odd = false -%}
+						{%- endif -%}
+
 						<div class="archive-image--wrapper media{% unless setting.media_ratio == 'adapt' %} {{ setting.media_ratio }}{% endunless %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}{% if forloop.first and odd %} ts:max-md:col-span-2{% endif %}"
 							{% if settings.animations_reveal_on_scroll %}
 								data-cascade
