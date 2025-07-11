@@ -33,17 +33,10 @@
           "settings": {
             "product": "4-plats"
           }
-        },
-        "product_KUU4TY": {
-          "type": "product",
-          "settings": {
-            "product": "mura"
-          }
         }
       },
       "block_order": [
-        "product_Lid64z",
-        "product_KUU4TY"
+        "product_Lid64z"
       ],
       "custom_css": [
         ".product-item--content,.product-item--content .price {color: var(--ts-color-gray);}"
@@ -67,14 +60,14 @@
         "text_NnwYPC": {
           "type": "text",
           "settings": {
-            "text": "<p>Pure silk that breaths your skin.</p>",
+            "text": "<p>Genuine Leather</p>",
             "text_style": "body"
           }
         },
         "heading_UrAd9Y": {
           "type": "heading",
           "settings": {
-            "heading": "Mura",
+            "heading": "Zima",
             "heading_size": "ts:!text-base"
           }
         }
@@ -91,7 +84,7 @@
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "media_type": "image",
-        "image": "shopify://shop_images/EMMANUELA_GRAHAM_EDITORIAL-349.jpg",
+        "image": "shopify://shop_images/40-EMMANUELA_GRAHAM_EDITORIAL-560.jpg",
         "height": "adapt",
         "video_aspect_ratio": "ts:aspect-video",
         "desktop_image_width": "medium",
@@ -113,7 +106,7 @@
         "product_DyAqni": {
           "type": "product",
           "settings": {
-            "product": "idk"
+            "product": "zima"
           }
         }
       },
@@ -128,6 +121,61 @@
         "color_scheme": "",
         "show_secondary_image": true,
         "image_height": "ts:aspect-[3/4]",
+        "container_width": 1580,
+        "full_width": false,
+        "pad_desk": 80,
+        "pad_lap": 70,
+        "pad_tab": 60,
+        "pad_mob": 40
+      }
+    },
+    "eg_product_list_idqKNr": {
+      "type": "eg_product_list",
+      "blocks": {
+        "product_N4hfJk": {
+          "type": "product",
+          "settings": {
+            "product": "idk"
+          }
+        }
+      },
+      "block_order": [
+        "product_N4hfJk"
+      ],
+      "name": "Product List",
+      "settings": {
+        "color_scheme": "",
+        "show_secondary_image": true,
+        "image_height": "ts:aspect-[3/4]",
+        "container_width": 1500,
+        "full_width": true,
+        "pad_desk": 100,
+        "pad_lap": 80,
+        "pad_tab": 60,
+        "pad_mob": 40
+      }
+    },
+    "eg_product_list_RjnMHn": {
+      "type": "eg_product_list",
+      "blocks": {
+        "product_PRTTX4": {
+          "type": "product",
+          "settings": {
+            "product": "mura"
+          }
+        }
+      },
+      "block_order": [
+        "product_PRTTX4"
+      ],
+      "custom_css": [
+        ".product-item--content,.product-item--content .price {color: var(--ts-color-gray);}"
+      ],
+      "name": "Product List",
+      "settings": {
+        "color_scheme": "",
+        "show_secondary_image": true,
+        "image_height": "adapt",
         "container_width": 1580,
         "full_width": false,
         "pad_desk": 80,
@@ -160,10 +208,11 @@
         "text_mYnpPt",
         "heading_ncgazh"
       ],
+      "custom_css": [],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "media_type": "image",
-        "image": "shopify://shop_images/40-EMMANUELA_GRAHAM_EDITORIAL-560.jpg",
+        "image": "shopify://shop_images/EMMANUELA_GRAHAM_EDITORIAL-349.jpg",
         "height": "adapt",
         "video_aspect_ratio": "ts:aspect-video",
         "desktop_image_width": "medium",
@@ -177,35 +226,6 @@
         "color_scheme": "",
         "padding_top": 20,
         "padding_bottom": 20
-      }
-    },
-    "eg_product_list_RjnMHn": {
-      "type": "eg_product_list",
-      "blocks": {
-        "product_PRTTX4": {
-          "type": "product",
-          "settings": {
-            "product": "zima"
-          }
-        }
-      },
-      "block_order": [
-        "product_PRTTX4"
-      ],
-      "custom_css": [
-        ".product-item--content,.product-item--content .price {color: var(--ts-color-gray);}"
-      ],
-      "name": "Product List",
-      "settings": {
-        "color_scheme": "",
-        "show_secondary_image": true,
-        "image_height": "adapt",
-        "container_width": 1580,
-        "full_width": false,
-        "pad_desk": 80,
-        "pad_lap": 70,
-        "pad_tab": 60,
-        "pad_mob": 40
       }
     },
     "image_with_text_p9ehFd": {
@@ -340,6 +360,7 @@
     "eg_product_list_wTdUjG",
     "image_with_text_3UBw9r",
     "eg_product_list_gDXGGL",
+    "eg_product_list_idqKNr",
     "image_with_text_QTrbiA",
     "eg_product_list_RjnMHn",
     "image_with_text_p9ehFd",
