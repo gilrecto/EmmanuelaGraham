@@ -160,18 +160,16 @@
       "blocks": {
         "text_mYnpPt": {
           "type": "text",
-          "disabled": true,
           "settings": {
-            "text": "<p>\"We delight in the beauty of the butterfly, but rarely  admit the changes it has gone through to achieve that beauty\"</p>",
+            "text": "<p>Pure silk</p>",
             "text_style": "body"
           }
         },
         "heading_ncgazh": {
           "type": "heading",
-          "disabled": true,
           "settings": {
-            "heading": "- Maya Angelou",
-            "heading_size": "ts:!text-lg"
+            "heading": "Mura",
+            "heading_size": "ts:!text-base"
           }
         }
       },
@@ -187,7 +185,7 @@
         "height": "adapt",
         "video_aspect_ratio": "ts:aspect-video",
         "desktop_image_width": "medium",
-        "layout": "image_first",
+        "layout": "text_first",
         "image_behavior": "none",
         "content_layout": "no-overlap",
         "desktop_content_position": "middle",
@@ -233,9 +231,8 @@
       "blocks": {
         "text_UCKpbg": {
           "type": "text",
-          "disabled": true,
           "settings": {
-            "text": "<p>\"We delight in the beauty of the butterfly, but rarely  admit the changes it has gone through to achieve that beauty\"</p>",
+            "text": "<p>Song of Songs   | Capsule '25</p>",
             "text_style": "body"
           }
         },
