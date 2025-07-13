@@ -43,8 +43,8 @@
         "text_3fH67M": {
           "type": "text",
           "settings": {
-            "text": "Two weeks of dedicated craftsmanship, from our hands to your closets. Built to support you in function and form. Each piece is available for pre-order in limited quantities. Uniquely made to fit when chosen.",
-            "text_style": "subtitle"
+            "text": "Two weeks of dedicated craftsmanship, from our hands to your closets. This piece is available for pre-order in limited quantities. Uniquely made to fit when chosen. Expected to ship on<strong> August 1st.</strong>",
+            "text_style": "uppercase"
           }
         },
         "buy_buttons": {
