@@ -40,6 +40,13 @@
           "type": "quantity_selector",
           "settings": {}
         },
+        "text_3fH67M": {
+          "type": "text",
+          "settings": {
+            "text": "Two weeks of dedicated craftsmanship, from our hands to your closets. Built to support you in function and form. Each piece is available for pre-order in limited quantities. Uniquely made to fit when chosen.",
+            "text_style": "subtitle"
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -113,6 +120,7 @@
         "price",
         "variant_picker",
         "quantity_selector",
+        "text_3fH67M",
         "buy_buttons",
         "description",
         "collapsible_tab_7Wqwxn",
