@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "name": "t:sections.footer.name",
   "type": "footer",
@@ -17,11 +8,7 @@
         "text_gXWg6B": {
           "type": "text",
           "settings": {
-<<<<<<< HEAD
             "text": "<h6>EMMANUELA GRAHAM<\/h6>"
-=======
-            "text": "<h6>EMMANUELA GRAHAM</h6>"
->>>>>>> 93617b5e8103145e6ba6c274472c45bb3f99b656
           }
         }
       },

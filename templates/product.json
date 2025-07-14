@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "main": {
@@ -40,17 +31,10 @@
           "type": "quantity_selector",
           "settings": {}
         },
-<<<<<<< HEAD
         "text_8nwizb": {
           "type": "text",
           "settings": {
             "text": "TWO WEEKS OF DEDICATED CRAFTSMANSHIP, FROM OUR HANDS TO YOUR CLOSETS. THIS PIECE IS AVAILABLE FOR PRE-ORDER IN LIMITED QUANTITIES. UNIQUELY MADE TO FIT WHEN CHOSEN. EXPECTED TO SHIP ON<strong> AUGUST 1ST.<\/strong>",
-=======
-        "text_3fH67M": {
-          "type": "text",
-          "settings": {
-            "text": "Two weeks of dedicated craftsmanship, from our hands to your closets. This piece is available for pre-order in limited quantities. Uniquely made to fit when chosen. Expected to ship on<strong> August 1st.</strong>",
->>>>>>> 93617b5e8103145e6ba6c274472c45bb3f99b656
             "text_style": "uppercase"
           }
         },
