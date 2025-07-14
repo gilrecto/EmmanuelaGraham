@@ -10,13 +10,13 @@
 .page--index .section-header .header-wrapper {
 	@apply ts:bg-transparent;
 }
-.page--index .section-header .header-wrapper .header__heading-logo {
+/* .page--index .section-header .header-wrapper .header__heading-logo {
 	@apply ts:invert-100;
 }
 .page--index .section-header .header-wrapper .header__menu-item:not(.sub-menu--item),
 .page--index .section-header .header-wrapper .header__icon {
 	@apply ts:text-white;
-}
+} */
 /* .page--index .section-header:not(.scrolled-past-header) .header-wrapper {
 	@apply ts:bg-transparent;
 }

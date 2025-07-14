@@ -41,7 +41,7 @@
 
 <div class="color-{{ section.settings.color_scheme }} media-banner ts:relative ts:w-full ts:md:aspect-video ts:aspect-[3/4] ts:overflow-hidden ts:grid ts:grid-rows-1 ts:grid-cols-1{% if section.index == 1 %} page-main-banner{% endif %}">
 	{%- if setting.add_overlay -%}
-		<div class="overlay ts:relative ts:z-[1] ts:row-span-full ts:col-span-full ts:bg-black ts:opacity-[var(--overlay-opacity)] ts:pointer-events:none">&nbsp;</div>
+		<div class="overlay ts:relative ts:z-[1] ts:row-span-full ts:col-span-full ts:bg-[rgba(var(--color-foreground))] ts:opacity-[var(--overlay-opacity)] ts:pointer-events:none">&nbsp;</div>
 	{%- endif -%}
 
 	{%- for block in section.blocks -%}
@@ -56,10 +56,20 @@
 
 	<div class="banner-media banner-media--{{ setting.banner_type }} ts:relative ts:w-full ts:h-auto ts:row-span-full ts:col-span-full ts:pointer-events:none">
 		{%- if setting.banner_type == 'video' and setting.video != blank -%}
-			{%- if setting.poster != blank -%}
-				{% assign poster = setting.poster | image_url: width: setting.poster.width %}
-			{%- endif -%}
-			{%- assign video_source = setting.video.sources[0].url -%}
+			{%- liquid
+				assign video_source = ''
+
+				if setting.poster != blank
+					assign poster = setting.poster | image_url: width: setting.poster.width
+				endif
+
+				for video_source in setting.video.sources
+					if video_source.format == 'mp4'
+						assign video_source = video_source.url
+					endif
+				endfor
+			-%}
+
 			<video class="lazy video-player ts:w-full ts:h-full ts:object-cover" autoplay muted loop playsinline poster="{{ poster }}">
 				<source data-src="{{ video_source }}" type="video/mp4">
 				Your browser does not support the video tag.
@@ -185,10 +195,20 @@
 </div>
 
 {%- if setting.mb_video != blank -%}
-  {% assign poster_mob = setting.mb_poster | image_url: width: setting.mb_poster.width %}
-  {% if setting.mb_poster == blank %}
-    {% assign poster_mob = setting.poster | image_url: width: setting.poster.width %}
-  {% endif %}
+	{%- liquid
+		assign poster_mob = setting.mb_poster | image_url: width: setting.mb_poster.width
+		assign mob_video_source = ''
+
+		if setting.mb_poster == blank
+			assign poster_mob = setting.poster | image_url: width: setting.poster.width
+		endif
+
+		for video_source in setting.mb_video.sources
+			if video_source.format == 'mp4'
+				assign mob_video_source = video_source.url
+			endif
+		endfor
+	-%}
 	
   <script type="text/javascript" async>
     document.addEventListener("DOMContentLoaded", function() {
@@ -198,7 +218,7 @@
         if(!mobileView.matches) {
           return
         } else {
-          let mb_video = '{{ setting.mb_video.sources[0].url }}',
+          let mb_video = '{{ mob_video_source }}',
               mb_poster = '{{ poster_mob }}',
               video_player = document.querySelector("video.video-player");
 

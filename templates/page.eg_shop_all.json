@@ -24,17 +24,10 @@
           "settings": {
             "product": "4-plats"
           }
-        },
-        "product_KUU4TY": {
-          "type": "product",
-          "settings": {
-            "product": "enzo-full-length-black"
-          }
         }
       },
       "block_order": [
-        "product_Lid64z",
-        "product_KUU4TY"
+        "product_Lid64z"
       ],
       "custom_css": [
         ".product-item--content,.product-item--content .price {color: var(--ts-color-gray);}"
@@ -58,14 +51,14 @@
         "text_NnwYPC": {
           "type": "text",
           "settings": {
-            "text": "<p>\"We delight in the beauty of the butterfly, but rarely  admit the changes it has gone through to achieve that beauty\"<\/p>",
+            "text": "<p>Genuine Leather<\/p>",
             "text_style": "body"
           }
         },
         "heading_UrAd9Y": {
           "type": "heading",
           "settings": {
-            "heading": "<em>- Maya Angelou<\/em>",
+            "heading": "Zima",
             "heading_size": "ts:!text-base"
           }
         }
@@ -82,7 +75,7 @@
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "media_type": "image",
-        "image": "shopify:\/\/shop_images\/Maya-Angelou.jpg",
+        "image": "shopify:\/\/shop_images\/40-EMMANUELA_GRAHAM_EDITORIAL-560.jpg",
         "height": "adapt",
         "video_aspect_ratio": "ts:aspect-video",
         "desktop_image_width": "medium",
@@ -104,7 +97,7 @@
         "product_DyAqni": {
           "type": "product",
           "settings": {
-            "product": "idk"
+            "product": "zima"
           }
         }
       },
@@ -127,23 +120,47 @@
         "pad_mob": 40
       }
     },
+    "eg_product_list_idqKNr": {
+      "type": "eg_product_list",
+      "blocks": {
+        "product_N4hfJk": {
+          "type": "product",
+          "settings": {
+            "product": "idk"
+          }
+        }
+      },
+      "block_order": [
+        "product_N4hfJk"
+      ],
+      "name": "Product List",
+      "settings": {
+        "color_scheme": "",
+        "show_secondary_image": true,
+        "image_height": "ts:aspect-[3\/4]",
+        "container_width": 1500,
+        "full_width": true,
+        "pad_desk": 100,
+        "pad_lap": 80,
+        "pad_tab": 60,
+        "pad_mob": 40
+      }
+    },
     "image_with_text_QTrbiA": {
       "type": "image-with-text",
       "blocks": {
         "text_mYnpPt": {
           "type": "text",
-          "disabled": true,
           "settings": {
-            "text": "<p>\"We delight in the beauty of the butterfly, but rarely  admit the changes it has gone through to achieve that beauty\"<\/p>",
+            "text": "<h5>Pure silk<\/h5>",
             "text_style": "body"
           }
         },
         "heading_ncgazh": {
           "type": "heading",
-          "disabled": true,
           "settings": {
-            "heading": "- Maya Angelou",
-            "heading_size": "ts:!text-lg"
+            "heading": "Mura",
+            "heading_size": "ts:!text-base"
           }
         }
       },
@@ -151,14 +168,15 @@
         "text_mYnpPt",
         "heading_ncgazh"
       ],
+      "custom_css": [],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "media_type": "image",
-        "image": "shopify:\/\/shop_images\/shop_all_img2.jpg",
+        "image": "shopify:\/\/shop_images\/EMMANUELA_GRAHAM_EDITORIAL-349.jpg",
         "height": "adapt",
         "video_aspect_ratio": "ts:aspect-video",
         "desktop_image_width": "medium",
-        "layout": "image_first",
+        "layout": "text_first",
         "image_behavior": "none",
         "content_layout": "no-overlap",
         "desktop_content_position": "middle",
@@ -176,7 +194,7 @@
         "product_PRTTX4": {
           "type": "product",
           "settings": {
-            "product": "zima"
+            "product": "mura"
           }
         }
       },
@@ -204,9 +222,8 @@
       "blocks": {
         "text_UCKpbg": {
           "type": "text",
-          "disabled": true,
           "settings": {
-            "text": "<p>\"We delight in the beauty of the butterfly, but rarely  admit the changes it has gone through to achieve that beauty\"<\/p>",
+            "text": "<h5>Song of Songs   | Capsule '25<\/h5>",
             "text_style": "body"
           }
         },
@@ -229,7 +246,7 @@
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "media_type": "image",
-        "image": "shopify:\/\/shop_images\/shop_all_img3.jpg",
+        "image": "shopify:\/\/shop_images\/3Z2A0663.jpg",
         "height": "adapt",
         "video_aspect_ratio": "ts:aspect-video",
         "desktop_image_width": "medium",
@@ -245,62 +262,10 @@
         "padding_bottom": 52
       }
     },
-    "image_with_text_VpnA48": {
-      "type": "image-with-text",
-      "blocks": {
-        "text_qR6a39": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "<p>\"We delight in the beauty of the butterfly, but rarely  admit the changes it has gone through to achieve that beauty\"<\/p>",
-            "text_style": "body"
-          }
-        },
-        "heading_76HcfX": {
-          "type": "heading",
-          "disabled": true,
-          "settings": {
-            "heading": "Desicions Desicions....",
-            "heading_size": "ts:!text-2xl"
-          }
-        }
-      },
-      "block_order": [
-        "text_qR6a39",
-        "heading_76HcfX"
-      ],
-      "custom_css": [
-        ".image-with-text__content {max-width: 480px; margin: 0 auto;}"
-      ],
-      "name": "t:sections.image-with-text.presets.name",
-      "settings": {
-        "media_type": "image",
-        "image": "shopify:\/\/shop_images\/shop_all_img4.jpg",
-        "height": "adapt",
-        "video_aspect_ratio": "ts:aspect-video",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "image_behavior": "none",
-        "content_layout": "no-overlap",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "left",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "padding_top": 48,
-        "padding_bottom": 20
-      }
-    },
     "eg_product_list_ty3eW4": {
       "type": "eg_product_list",
       "blocks": {
         "product_pPtYk4": {
-          "type": "product",
-          "settings": {
-            "product": "mura"
-          }
-        },
-        "product_Dp8ygd": {
           "type": "product",
           "settings": {
             "product": "enzo-cropped-charcoal"
@@ -308,8 +273,7 @@
         }
       },
       "block_order": [
-        "product_pPtYk4",
-        "product_Dp8ygd"
+        "product_pPtYk4"
       ],
       "custom_css": [
         ".product-item--content,.product-item--content .price {color: var(--ts-color-gray);}"
@@ -333,7 +297,7 @@
         "column_DbGpq3": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/db39f8547fa59ad51253fa4e97cb8b22b04c3b56.png",
+            "image": "shopify:\/\/shop_images\/EMMANUELA_GRAHAM_EDITORIAL-421.jpg",
             "title": "",
             "text": "",
             "link_label": "",
@@ -343,7 +307,7 @@
         "column_YzpLD8": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/cb02553776edca622dbfb3fa9bf5f1a10b6a5c2c.png",
+            "image": "shopify:\/\/shop_images\/EMMANUELA_GRAHAM_EDITORIAL-406.jpg",
             "title": "",
             "text": "",
             "link_label": "",
@@ -362,10 +326,10 @@
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
-        "title": "",
-        "heading_size": "h1",
+        "title": "EDIT 02 | COMING SOON",
+        "heading_size": "h2",
         "image_width": "full",
-        "image_ratio": "adapt",
+        "image_ratio": "portrait",
         "button_label": "",
         "button_link": "",
         "columns_desktop": 4,
@@ -384,10 +348,10 @@
     "eg_product_list_wTdUjG",
     "image_with_text_3UBw9r",
     "eg_product_list_gDXGGL",
+    "eg_product_list_idqKNr",
     "image_with_text_QTrbiA",
     "eg_product_list_RjnMHn",
     "image_with_text_p9ehFd",
-    "image_with_text_VpnA48",
     "eg_product_list_ty3eW4",
     "multicolumn_CWcbEy"
   ]
