@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "eg_banner_4WHL6Q": {
@@ -27,7 +36,11 @@
         "add_overlay": true,
         "overlay_opacity": 0.1,
         "enable_anim": false,
+<<<<<<< HEAD
         "video": "shopify:\/\/files\/videos\/webvid.mov",
+=======
+        "video": "shopify://files/videos/webvid.mov",
+>>>>>>> 93617b5e8103145e6ba6c274472c45bb3f99b656
         "content_alignment_h": "ts:md:items-center",
         "content_alignment_v": "ts:md:justify-center",
         "text_alignment": "center",
@@ -98,8 +111,13 @@
         "add_overlay": false,
         "overlay_opacity": 0.5,
         "enable_anim": false,
+<<<<<<< HEAD
         "banner_image": "shopify:\/\/shop_images\/Capsule_25_Edit_02.jpg",
         "banner_img_mb": "shopify:\/\/shop_images\/EMMANUELA_GRAHAM_EDITORIAL-463.jpg",
+=======
+        "banner_image": "shopify://shop_images/Capsule_25_Edit_02.jpg",
+        "banner_img_mb": "shopify://shop_images/EMMANUELA_GRAHAM_EDITORIAL-463.jpg",
+>>>>>>> 93617b5e8103145e6ba6c274472c45bb3f99b656
         "content_alignment_h": "ts:md:items-center",
         "content_alignment_v": "ts:md:justify-center",
         "text_alignment": "center",
