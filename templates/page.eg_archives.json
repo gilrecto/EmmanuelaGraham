@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -18,7 +27,25 @@
     "eg_archive_list": {
       "type": "eg_archive_list",
       "blocks": {
+        "archive_item_Bd7mNg": {
+          "type": "archive_item",
+          "settings": {
+            "archive": ""
+          }
+        },
+        "archive_item_eDz7hC": {
+          "type": "archive_item",
+          "settings": {
+            "archive": ""
+          }
+        },
         "archive_item_tbcyJM": {
+          "type": "archive_item",
+          "settings": {
+            "archive": "song-of-sons-capsule-25"
+          }
+        },
+        "archive_item_qWXYt4": {
           "type": "archive_item",
           "settings": {
             "archive": "tropism-a-w-2024-collection"
@@ -50,7 +77,10 @@
         }
       },
       "block_order": [
+        "archive_item_Bd7mNg",
+        "archive_item_eDz7hC",
         "archive_item_tbcyJM",
+        "archive_item_qWXYt4",
         "archive_item_r8VYWV",
         "archive_item_BphU3Q",
         "archive_item_eBXiMB",
