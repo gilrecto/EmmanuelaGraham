@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "title": {
@@ -51,7 +60,7 @@
         "text_NnwYPC": {
           "type": "text",
           "settings": {
-            "text": "<p>Genuine Leather<\/p>",
+            "text": "<p>Genuine Leather</p>",
             "text_style": "body"
           }
         },
@@ -75,7 +84,7 @@
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "media_type": "image",
-        "image": "shopify:\/\/shop_images\/40-EMMANUELA_GRAHAM_EDITORIAL-560.jpg",
+        "image": "shopify://shop_images/40-EMMANUELA_GRAHAM_EDITORIAL-560.jpg",
         "height": "adapt",
         "video_aspect_ratio": "ts:aspect-video",
         "desktop_image_width": "medium",
@@ -137,7 +146,7 @@
       "settings": {
         "color_scheme": "",
         "show_secondary_image": true,
-        "image_height": "ts:aspect-[3\/4]",
+        "image_height": "ts:aspect-[3/4]",
         "container_width": 1500,
         "full_width": true,
         "pad_desk": 100,
@@ -152,7 +161,7 @@
         "text_mYnpPt": {
           "type": "text",
           "settings": {
-            "text": "<h5>Pure silk<\/h5>",
+            "text": "<h5>Pure silk</h5>",
             "text_style": "body"
           }
         },
@@ -172,11 +181,11 @@
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "media_type": "image",
-        "image": "shopify:\/\/shop_images\/EMMANUELA_GRAHAM_EDITORIAL-349.jpg",
+        "image": "shopify://shop_images/EMMANUELA_GRAHAM_EDITORIAL-349.jpg",
         "height": "adapt",
         "video_aspect_ratio": "ts:aspect-video",
         "desktop_image_width": "medium",
-        "layout": "text_first",
+        "layout": "image_first",
         "image_behavior": "none",
         "content_layout": "no-overlap",
         "desktop_content_position": "middle",
@@ -188,42 +197,13 @@
         "padding_bottom": 20
       }
     },
-    "eg_product_list_RjnMHn": {
-      "type": "eg_product_list",
-      "blocks": {
-        "product_PRTTX4": {
-          "type": "product",
-          "settings": {
-            "product": "mura"
-          }
-        }
-      },
-      "block_order": [
-        "product_PRTTX4"
-      ],
-      "custom_css": [
-        ".product-item--content,.product-item--content .price {color: var(--ts-color-gray);}"
-      ],
-      "name": "Product List",
-      "settings": {
-        "color_scheme": "",
-        "show_secondary_image": true,
-        "image_height": "adapt",
-        "container_width": 1580,
-        "full_width": false,
-        "pad_desk": 80,
-        "pad_lap": 70,
-        "pad_tab": 60,
-        "pad_mob": 40
-      }
-    },
     "image_with_text_p9ehFd": {
       "type": "image-with-text",
       "blocks": {
         "text_UCKpbg": {
           "type": "text",
           "settings": {
-            "text": "<h5>Song of Songs   | Capsule '25<\/h5>",
+            "text": "<h5>Song of Songs   | Capsule '25</h5>",
             "text_style": "body"
           }
         },
@@ -246,7 +226,7 @@
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "media_type": "image",
-        "image": "shopify:\/\/shop_images\/3Z2A0663.jpg",
+        "image": "shopify://shop_images/3Z2A0663.jpg",
         "height": "adapt",
         "video_aspect_ratio": "ts:aspect-video",
         "desktop_image_width": "medium",
@@ -297,7 +277,7 @@
         "column_DbGpq3": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/EMMANUELA_GRAHAM_EDITORIAL-421.jpg",
+            "image": "shopify://shop_images/EMMANUELA_GRAHAM_EDITORIAL-421.jpg",
             "title": "",
             "text": "",
             "link_label": "",
@@ -307,7 +287,7 @@
         "column_YzpLD8": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/EMMANUELA_GRAHAM_EDITORIAL-406.jpg",
+            "image": "shopify://shop_images/EMMANUELA_GRAHAM_EDITORIAL-406.jpg",
             "title": "",
             "text": "",
             "link_label": "",
@@ -350,7 +330,6 @@
     "eg_product_list_gDXGGL",
     "eg_product_list_idqKNr",
     "image_with_text_QTrbiA",
-    "eg_product_list_RjnMHn",
     "image_with_text_p9ehFd",
     "eg_product_list_ty3eW4",
     "multicolumn_CWcbEy"
