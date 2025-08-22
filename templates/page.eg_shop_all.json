@@ -155,51 +155,6 @@
         "pad_mob": 40
       }
     },
-    "image_with_text_p9ehFd": {
-      "type": "image-with-text",
-      "blocks": {
-        "text_UCKpbg": {
-          "type": "text",
-          "settings": {
-            "text": "<h5>Song of Songs   | Capsule '25</h5>",
-            "text_style": "body"
-          }
-        },
-        "heading_becTc9": {
-          "type": "heading",
-          "disabled": true,
-          "settings": {
-            "heading": "FIttings w/ Precious",
-            "heading_size": "ts:!text-2xl"
-          }
-        }
-      },
-      "block_order": [
-        "text_UCKpbg",
-        "heading_becTc9"
-      ],
-      "custom_css": [
-        ".image-with-text__content {max-width: 480px; margin: 0 auto;}"
-      ],
-      "name": "t:sections.image-with-text.presets.name",
-      "settings": {
-        "media_type": "image",
-        "image": "shopify://shop_images/17-EMMANUELA_GRAHAM_EDITORIAL-426.jpg",
-        "height": "adapt",
-        "video_aspect_ratio": "ts:aspect-video",
-        "desktop_image_width": "medium",
-        "layout": "text_first",
-        "image_behavior": "none",
-        "content_layout": "no-overlap",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "left",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "padding_top": 20,
-        "padding_bottom": 52
-      }
-    },
     "eg_product_list_DPcKD8": {
       "type": "eg_product_list",
       "blocks": {
@@ -320,6 +275,51 @@
         "pad_lap": 70,
         "pad_tab": 60,
         "pad_mob": 40
+      }
+    },
+    "image_with_text_p9ehFd": {
+      "type": "image-with-text",
+      "blocks": {
+        "text_UCKpbg": {
+          "type": "text",
+          "settings": {
+            "text": "<h5>Song of Songs   | Capsule '25</h5>",
+            "text_style": "body"
+          }
+        },
+        "heading_becTc9": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "FIttings w/ Precious",
+            "heading_size": "ts:!text-2xl"
+          }
+        }
+      },
+      "block_order": [
+        "text_UCKpbg",
+        "heading_becTc9"
+      ],
+      "custom_css": [
+        ".image-with-text__content {max-width: 480px; margin: 0 auto;}"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "media_type": "image",
+        "image": "shopify://shop_images/17-EMMANUELA_GRAHAM_EDITORIAL-426.jpg",
+        "height": "adapt",
+        "video_aspect_ratio": "ts:aspect-video",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 52
       }
     },
     "eg_product_list_VXRCye": {
