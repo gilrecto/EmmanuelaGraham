@@ -200,8 +200,8 @@
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
-        "media_type": "video",
-        "image": "shopify://shop_images/about_img1.jpg",
+        "media_type": "image",
+        "image": "shopify://shop_images/crushed_1_82_of_89.jpg",
         "height": "adapt",
         "video": "shopify://files/videos/EG Web Design Feedback.mp4",
         "poster": "shopify://shop_images/crushed_1_82_of_89.jpg",
