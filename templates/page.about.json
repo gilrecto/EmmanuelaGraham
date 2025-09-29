@@ -175,12 +175,56 @@
         "padding_top": 32,
         "padding_bottom": 100
       }
+    },
+    "image_with_text_MTpkkf": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_rrTE7f": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Social",
+            "heading_size": "ts:!text-base"
+          }
+        },
+        "text_494XEF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>While what we wear plays a powerful role, we believe the accountability, joy, and possibilities found in community are just as essential.<br/><br/>EG. The Social is our space to connect, to unite and commune over a mutual love and belief in embracing our fullest selves. It's an extension of everything we've built—a place where the conversations that matter can unfold. It's a gathering place.<br/><br/>We observe life, and build around it. EG. The Social reflects this same philosophy: community built with intention, connection rooted in authenticity, growth measured in depth not scale.<br/><br/>Welcome to EG. The Social.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_rrTE7f",
+        "text_494XEF"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "media_type": "video",
+        "image": "shopify://shop_images/about_img1.jpg",
+        "height": "adapt",
+        "video": "shopify://files/videos/EG Web Design Feedback.mp4",
+        "poster": "shopify://shop_images/crushed_1_82_of_89.jpg",
+        "video_aspect_ratio": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 32,
+        "padding_bottom": 100
+      }
     }
   },
   "order": [
     "main",
     "rich_text_W4MKt7",
     "image_with_text_UJXDnL",
-    "image_with_text_NcFDhc"
+    "image_with_text_NcFDhc",
+    "image_with_text_MTpkkf"
   ]
 }
