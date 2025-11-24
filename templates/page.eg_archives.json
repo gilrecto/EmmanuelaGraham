@@ -50,41 +50,13 @@
           "settings": {
             "archive": "tropism-a-w-2024-collection"
           }
-        },
-        "archive_item_r8VYWV": {
-          "type": "archive_item",
-          "settings": {
-            "archive": "patterns-of-arrival-short-film"
-          }
-        },
-        "archive_item_BphU3Q": {
-          "type": "archive_item",
-          "settings": {
-            "archive": "sculptural-activation-fold-flow"
-          }
-        },
-        "archive_item_eBXiMB": {
-          "type": "archive_item",
-          "settings": {
-            "archive": "root-release-a-w-2025-collection"
-          }
-        },
-        "archive_item_VfJCKt": {
-          "type": "archive_item",
-          "settings": {
-            "archive": "accra-toronto-conversation-series"
-          }
         }
       },
       "block_order": [
         "archive_item_Bd7mNg",
         "archive_item_eDz7hC",
         "archive_item_tbcyJM",
-        "archive_item_qWXYt4",
-        "archive_item_r8VYWV",
-        "archive_item_BphU3Q",
-        "archive_item_eBXiMB",
-        "archive_item_VfJCKt"
+        "archive_item_qWXYt4"
       ],
       "custom_css": [
         ".rte,.archive-released-txt {color: var(--ts-color-gray);}"
