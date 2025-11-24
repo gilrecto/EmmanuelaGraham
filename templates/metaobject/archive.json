@@ -35,7 +35,7 @@
         "xo_gallery_xo_gallery_2_T3PBzB": {
           "type": "shopify://apps/xo-gallery/blocks/xo-gallery-2/e61dfbaa-1a75-4e4e-bffc-324f17325251",
           "settings": {
-            "gallery_metaobjects": "tropism",
+            "gallery_metaobjects": "song-of-songs",
             "padding_top": 50,
             "padding_bottom": 50
           }
