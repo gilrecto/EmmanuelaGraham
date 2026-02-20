@@ -31,7 +31,7 @@
         "product_Lid64z": {
           "type": "product",
           "settings": {
-            "product": "4-plats"
+            "product": "osuo-earrings"
           }
         }
       },
@@ -60,14 +60,14 @@
         "text_NnwYPC": {
           "type": "text",
           "settings": {
-            "text": "<p>Genuine Leather</p>",
+            "text": "<p>Stainless Steel</p>",
             "text_style": "body"
           }
         },
         "heading_UrAd9Y": {
           "type": "heading",
           "settings": {
-            "heading": "Zima",
+            "heading": "Osuo",
             "heading_size": "ts:!text-base"
           }
         }
@@ -84,10 +84,10 @@
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "media_type": "image",
-        "image": "shopify://shop_images/40-EMMANUELA_GRAHAM_EDITORIAL-560.jpg",
+        "image": "shopify://shop_images/E.G-CREATIVESTILLS-160.jpg",
         "height": "adapt",
         "video_aspect_ratio": "ts:aspect-video",
-        "desktop_image_width": "medium",
+        "desktop_image_width": "small",
         "layout": "text_first",
         "image_behavior": "none",
         "content_layout": "no-overlap",
@@ -248,35 +248,6 @@
         "pad_mob": 40
       }
     },
-    "eg_product_list_ty3eW4": {
-      "type": "eg_product_list",
-      "blocks": {
-        "product_pPtYk4": {
-          "type": "product",
-          "settings": {
-            "product": "armour-jacket"
-          }
-        }
-      },
-      "block_order": [
-        "product_pPtYk4"
-      ],
-      "custom_css": [
-        ".product-item--content,.product-item--content .price {color: var(--ts-color-gray);}"
-      ],
-      "name": "Product List",
-      "settings": {
-        "color_scheme": "",
-        "show_secondary_image": true,
-        "image_height": "adapt",
-        "container_width": 1580,
-        "full_width": false,
-        "pad_desk": 80,
-        "pad_lap": 70,
-        "pad_tab": 60,
-        "pad_mob": 40
-      }
-    },
     "image_with_text_p9ehFd": {
       "type": "image-with-text",
       "blocks": {
@@ -320,6 +291,35 @@
         "color_scheme": "",
         "padding_top": 20,
         "padding_bottom": 52
+      }
+    },
+    "eg_product_list_ty3eW4": {
+      "type": "eg_product_list",
+      "blocks": {
+        "product_pPtYk4": {
+          "type": "product",
+          "settings": {
+            "product": "armour-jacket"
+          }
+        }
+      },
+      "block_order": [
+        "product_pPtYk4"
+      ],
+      "custom_css": [
+        ".product-item--content,.product-item--content .price {color: var(--ts-color-gray);}"
+      ],
+      "name": "Product List",
+      "settings": {
+        "color_scheme": "",
+        "show_secondary_image": true,
+        "image_height": "adapt",
+        "container_width": 1580,
+        "full_width": false,
+        "pad_desk": 80,
+        "pad_lap": 70,
+        "pad_tab": 60,
+        "pad_mob": 40
       }
     },
     "eg_product_list_VXRCye": {
