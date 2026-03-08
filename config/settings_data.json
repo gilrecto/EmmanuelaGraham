@@ -1,13 +1,22 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
-    "logo": "shopify:\/\/shop_images\/logo.png",
+    "logo": "shopify://shop_images/logo.png",
     "logo_width": 70,
-    "favicon": "shopify:\/\/shop_images\/fav.png",
+    "favicon": "shopify://shop_images/fav.png",
     "type_header_font": "helvetica_n4",
     "use_custom_font": false,
     "custom_font_name": "Brittany Signature",
-    "custom_font_url_woff": "https:\/\/cdn.shopify.com\/s\/files\/1\/0924\/1195\/3518\/files\/BrittanySignatureRegular.woff?v=1750767127",
-    "custom_font_url_woff2": "https:\/\/cdn.shopify.com\/s\/files\/1\/0924\/1195\/3518\/files\/BrittanySignatureRegular.woff2?v=1750767127",
+    "custom_font_url_woff": "https://cdn.shopify.com/s/files/1/0924/1195/3518/files/BrittanySignatureRegular.woff?v=1750767127",
+    "custom_font_url_woff2": "https://cdn.shopify.com/s/files/1/0924/1195/3518/files/BrittanySignatureRegular.woff2?v=1750767127",
     "heading_scale": 100,
     "type_body_font": "helvetica_n4",
     "body_scale": 100,
@@ -103,7 +112,7 @@
     "sale_badge_color_scheme": "scheme-4",
     "sold_out_badge_color_scheme": "scheme-3",
     "brand_headline": "",
-    "brand_description": "<p><\/p>",
+    "brand_description": "<p></p>",
     "brand_image_width": 100,
     "social_facebook_link": "",
     "social_instagram_link": "",
@@ -140,7 +149,7 @@
     "content_for_index": [],
     "blocks": {
       "15683396631634586217": {
-        "type": "shopify:\/\/apps\/inbox\/blocks\/chat\/841fc607-4181-4ad1-842d-e24d7f8bad6b",
+        "type": "shopify://apps/inbox/blocks/chat/841fc607-4181-4ad1-842d-e24d7f8bad6b",
         "disabled": false,
         "settings": {
           "button_color": "#000000",
@@ -152,6 +161,11 @@
           "button_vertical_position": "lowest",
           "greeting_message": ""
         }
+      },
+      "14684659138027382045": {
+        "type": "shopify://apps/xo-gallery/blocks/xo-gallery-scripts/e61dfbaa-1a75-4e4e-bffc-324f17325251",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
@@ -379,7 +393,7 @@
       "sale_badge_color_scheme": "scheme-4",
       "sold_out_badge_color_scheme": "scheme-3",
       "brand_headline": "",
-      "brand_description": "<p><\/p>",
+      "brand_description": "<p></p>",
       "brand_image_width": 100,
       "social_twitter_link": "",
       "social_facebook_link": "",

@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "form": {
@@ -7,21 +16,21 @@
           "type": "contact_information",
           "settings": {
             "title": "General Inquiries",
-            "info": "<p><a href=\"mailto:info@emmanuelagraham.com\" title=\"📩 info@emmanuelagraham.com\">📩 info@emmanuelagraham.com<\/a><\/p>"
+            "info": "<p><a href=\"mailto:info@emmanuelagraham.com\" title=\"📩 info@emmanuelagraham.com\">📩 info@emmanuelagraham.com</a></p>"
           }
         },
         "contact_information_PfmkhV": {
           "type": "contact_information",
           "settings": {
-            "title": "Stockist \/ Wholesale",
-            "info": "<p><a href=\"mailto:partnerships@emmanuelagraham.com\" title=\"📩 partnerships@emmanuelagraham.com\">📩 partnerships@emmanuelagraham.com<\/a><\/p>"
+            "title": "Stockist / Wholesale",
+            "info": "<p><a href=\"mailto:partnerships@emmanuelagraham.com\" title=\"📩 partnerships@emmanuelagraham.com\">📩 Info@emmanuelagraham.com</a></p>"
           }
         },
         "contact_information_XJbXaD": {
           "type": "contact_information",
           "settings": {
-            "title": "Press \/ Media",
-            "info": "<p><a href=\"mailto:media@emmanuelagraham.com\" title=\"📩 media@emmanuelagraham.com\">📩 media@emmanuelagraham.com<\/a><\/p>"
+            "title": "Press / Media",
+            "info": "<p><a href=\"mailto:media@emmanuelagraham.com\" title=\"📩 media@emmanuelagraham.com\">📩 Info@emmanuelagraham.com</a></p>"
           }
         }
       },
@@ -36,7 +45,7 @@
       "settings": {
         "heading": "Let’s Connect.",
         "heading_size": "ts:!text-lg",
-        "description": "<p>For press, collaborations, or customer care, please reach out below.<br\/>We respond within 1–2 business days.<\/p>",
+        "description": "<p>For press, collaborations, or customer care, please reach out below.<br/>We respond within 1–2 business days.</p>",
         "text_alignment": "center",
         "color_scheme": "scheme-1",
         "padding_top": 52,
@@ -56,7 +65,7 @@
         "paragraph_bY8czf": {
           "type": "paragraph",
           "settings": {
-            "text": "<p>enter your email address below to recieve news and updates<\/p>"
+            "text": "<p>enter your email address below to recieve news and updates</p>"
           }
         },
         "email_form_b9NPaB": {

@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -25,19 +34,19 @@
         "text_A6jABR": {
           "type": "text",
           "settings": {
-            "text": "<p>Emmanuela Aba Graham is a Toronto-based industrial designer who explores the intersection of identity and form through pattern-making. Drawing from her Ghanaian-Canadian heritage, Graham creates garments that challenge conventional silhouettes while honoring the complexity of feminine identity.<\/p><p>Her work is characterized by a sophisticatd tension between structure and ease. This duality stands at the core of Graham's design philosophy, offering wearers both freedom and power through carefully engineered garments.\u2028<\/p><p>Each collection presents a conceptual narrative, inviting wearers to participate in an ongoing dialogue about presentation, perception, and presence.<\/p>"
+            "text": "<p>Emmanuela Aba Graham is a Toronto-based industrial designer who explores the intersection of identity and form through pattern-making. Drawing from her Ghanaian-Canadian heritage, Graham creates garments that challenge conventional silhouettes while honoring the complexity of feminine identity.</p><p>Her work is characterized by a sophisticatd tension between structure and ease. This duality stands at the core of Graham's design philosophy, offering wearers both freedom and power through carefully engineered garments. </p><p>Each collection presents a conceptual narrative, inviting wearers to participate in an ongoing dialogue about presentation, perception, and presence.</p>"
           }
         },
         "image_RxVmNi": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/emmanuela_g.jpg"
+            "image": "shopify://shop_images/emmanuela_g.jpg"
           }
         },
         "text_X8Lmt4": {
           "type": "text",
           "settings": {
-            "text": "<p>Through her meticulous craftsmanship and cultural perspective, Graham creates clothing that serves as both statement and embrace, garments that transform not just appearance but experience. Each piece is sustainably made in Canada using locally sourced materials, reflecting her commitment to ethical production and environmental responsibility.<\/p>"
+            "text": "<p>Through her meticulous craftsmanship and cultural perspective, Graham creates clothing that serves as both statement and embrace, garments that transform not just appearance but experience. Each piece is sustainably made in Canada using locally sourced materials, reflecting her commitment to ethical production and environmental responsibility.</p>"
           }
         },
         "heading_4DwW3J": {
@@ -90,7 +99,7 @@
         "text_ieUFRM": {
           "type": "text",
           "settings": {
-            "text": "<p>Emmanuela Graham (EG) is an independent womenswear label that merges industrial rigor with cultural significance. Each piece is a quiet defiance, blending engineered structure with the fluidity of lived expression. The brand reimagines everyday wear by honoring feminine complexity, creating garments that balance strength and versatility, while challenging conventional silhouettes. Crafted with precision and purpose, EG supports the modern woman, not only transforming how she dresses but how she moves through the world empowering her to define herself through both function and form. <br\/>A labour of love, handcrafted in Toronto, Canada. <\/p>",
+            "text": "<p>Emmanuela Graham (EG) is an independent womenswear label that merges industrial rigour with cultural significance. Each piece is a quiet defiance, blending engineered structure with the fluidity of lived expression. The brand reimagines everyday wear by honouring feminine complexity, creating garments that balance strength and versatility, while challenging conventional silhouettes. Crafted with precision and purpose, EG supports the modern woman, not only transforming how she dresses but how she moves through the world empowering her to define herself through both function and form. We design through the lens of utility and intention. </p><p><br/>A labour of love, handcrafted in Toronto, Canada. </p>",
             "text_style": "body"
           }
         }
@@ -105,7 +114,7 @@
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "media_type": "image",
-        "image": "shopify:\/\/shop_images\/about_img1.jpg",
+        "image": "shopify://shop_images/about_img1.jpg",
         "height": "adapt",
         "video_aspect_ratio": "ts:aspect-video",
         "desktop_image_width": "medium",
@@ -134,7 +143,7 @@
         "text_xYhrpb": {
           "type": "text",
           "settings": {
-            "text": "<p>At the heart of EG is Emmanuela, whose academic background in fashion and industrial design cultivated in the vibrant landscapes of Accra and Toronto shapes the brand's unique design philosophy. Her technical expertise and hands-on training in Accra enable her to explore the intersection of identity and form through pattern-making, crafting garments that are not only empowering, but also functional. <br\/>Graham creates pieces that challenge conventional silhouettes while honouring the complexity of feminine identity. Her work is marked by a sophisticated tension between structure and ease and this duality stands at the core of her philosophy. Through garments that are both functional and tasteful , she offers wearers a beautiful blend of freedom and power. <\/p>",
+            "text": "<p>At the heart of EG is Emmanuela, whose academic background in fashion and industrial design cultivated in the vibrant landscapes of Accra and Toronto shapes the brand's unique design philosophy. Her technical expertise and hands-on training in Accra enable her to explore the intersection of identity and form through pattern-making, crafting garments that are not only empowering, but also functional. <br/>Graham creates pieces that challenge conventional silhouettes while honouring the complexity of feminine identity. Her work is marked by a sophisticated tension between structure and ease and this duality stands at the core of her philosophy. Through garments that are both functional and tasteful , she offers wearers a beautiful blend of freedom and power. </p>",
             "text_style": "body"
           }
         }
@@ -149,10 +158,10 @@
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "media_type": "video",
-        "image": "shopify:\/\/shop_images\/about_img1.jpg",
+        "image": "shopify://shop_images/about_img1.jpg",
         "height": "adapt",
-        "video": "shopify:\/\/files\/videos\/EG Web Design Feedback.mp4",
-        "poster": "shopify:\/\/shop_images\/EG-Web-Design-Feedback.jpg",
+        "video": "shopify://files/videos/EG Web Design Feedback.mp4",
+        "poster": "shopify://shop_images/EG-Web-Design-Feedback.jpg",
         "video_aspect_ratio": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -164,7 +173,50 @@
         "section_color_scheme": "",
         "color_scheme": "",
         "padding_top": 32,
-        "padding_bottom": 100
+        "padding_bottom": 32
+      }
+    },
+    "image_with_text_MTpkkf": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_rrTE7f": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Social",
+            "heading_size": "ts:!text-base"
+          }
+        },
+        "text_494XEF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>While what we wear plays a powerful role, we believe the accountability, joy, and possibilities found in community are just as essential.<br/><br/>EG. The Social is our space to connect, to unite and commune over a mutual love and belief in embracing our fullest selves. It's an extension of everything we've built a place where the conversations that matter can unfold. It's a gathering place.<br/><br/>We observe life, and build around it. EG. The Social reflects this same philosophy: community built with intention, connection rooted in authenticity, growth measured in depth.<br/><br/>Welcome to EG. The Social.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_rrTE7f",
+        "text_494XEF"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "media_type": "image",
+        "image": "shopify://shop_images/crushed_1_82_of_89.jpg",
+        "height": "adapt",
+        "video": "shopify://files/videos/EG Web Design Feedback.mp4",
+        "poster": "shopify://shop_images/crushed_1_82_of_89.jpg",
+        "video_aspect_ratio": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 32,
+        "padding_bottom": 56
       }
     }
   },
@@ -172,6 +224,7 @@
     "main",
     "rich_text_W4MKt7",
     "image_with_text_UJXDnL",
-    "image_with_text_NcFDhc"
+    "image_with_text_NcFDhc",
+    "image_with_text_MTpkkf"
   ]
 }
