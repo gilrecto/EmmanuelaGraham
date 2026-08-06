@@ -198,10 +198,54 @@
         "heading_rrTE7f",
         "text_494XEF"
       ],
+      "disabled": true,
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "media_type": "image",
         "image": "shopify://shop_images/crushed_1_82_of_89.jpg",
+        "height": "adapt",
+        "video": "shopify://files/videos/EG Web Design Feedback.mp4",
+        "poster": "shopify://shop_images/crushed_1_82_of_89.jpg",
+        "video_aspect_ratio": "adapt",
+        "desktop_image_width": "large",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 32,
+        "padding_bottom": 56
+      }
+    },
+    "image_with_text_C7UMJb": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_fQwfrH": {
+          "type": "heading",
+          "settings": {
+            "heading": "Quiet Defiance",
+            "heading_size": "ts:!text-base"
+          }
+        },
+        "text_HAMmUr": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_fQwfrH",
+        "text_HAMmUr"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "media_type": "image",
+        "image": "shopify://shop_images/EMMANUELA_GRAHAM-5.jpg",
         "height": "adapt",
         "video": "shopify://files/videos/EG Web Design Feedback.mp4",
         "poster": "shopify://shop_images/crushed_1_82_of_89.jpg",
@@ -225,6 +269,7 @@
     "rich_text_W4MKt7",
     "image_with_text_UJXDnL",
     "image_with_text_NcFDhc",
-    "image_with_text_MTpkkf"
+    "image_with_text_MTpkkf",
+    "image_with_text_C7UMJb"
   ]
 }
