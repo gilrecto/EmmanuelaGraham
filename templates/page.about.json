@@ -99,7 +99,7 @@
         "text_ieUFRM": {
           "type": "text",
           "settings": {
-            "text": "<p>Emmanuela Graham (EG) is an independent womenswear label that merges industrial rigour with cultural significance. Each piece is a quiet defiance, blending engineered structure with the fluidity of lived expression. The brand reimagines everyday wear by honouring feminine complexity, creating garments that balance strength and versatility, while challenging conventional silhouettes. Crafted with precision and purpose, EG supports the modern woman, not only transforming how she dresses but how she moves through the world empowering her to define herself through both function and form. We design through the lens of utility and intention.</p><p> A labour of love, handcrafted in Toronto, Canada. </p>",
+            "text": "<p>Emmanuela Graham is an independent womenswear label that merges industrial rigour with cultural significance. Each piece is a quiet defiance, blending engineered structure with the fluidity of lived expression. The brand reimagines everyday wear by honouring feminine complexity, creating garments that balance strength and versatility, while challenging conventional silhouettes. Crafted with precision and purpose, EG supports the modern woman, not only transforming how she dresses but how she moves through the world empowering her to define herself through both function and form. We design through the lens of utility and intention.</p><p> A labour of love, handcrafted in Toronto, Canada. </p>",
             "text_style": "body"
           }
         }
@@ -226,14 +226,14 @@
         "heading_fQwfrH": {
           "type": "heading",
           "settings": {
-            "heading": "Quiet Defiance",
+            "heading": "",
             "heading_size": "ts:!text-base"
           }
         },
         "text_HAMmUr": {
           "type": "text",
           "settings": {
-            "text": "",
+            "text": "<p>\" The intersection of tradition and innovation in both thought and practice guide my work, rooted in a culture of respect and honour, yet sprouting in a world of individuality and rebellion.</p><p>Does it play a factor? Is it as simple as it should be? When two contradicting worlds collide, what motivates her? How does she represent herself in a world that demands and assumes so much? These are the questions I often explore. With pattern-making as the catalyst of my expression, where will this curiosity lead? \"</p><p>- Emmanuela Graham</p>",
             "text_style": "body"
           }
         }
